@@ -39,7 +39,7 @@ export function Audiences() {
       <div className="mx-auto w-full max-w-[1200px]">
         <h2
           data-reveal-child
-          className="mb-12 px-5 text-[36px] md:mb-[107px] md:px-10 md:text-[48px]"
+          className="mb-12 px-5 text-[32px] sm:text-[36px] md:mb-[107px] md:px-10 md:text-[48px]"
         >
           <span className="font-serif-accent block leading-[1.2] tracking-[-0.02em] text-green md:leading-[69px]">
             Cannabis Audiences

@@ -60,10 +60,10 @@ export default function ListOptionsPage() {
         <section className="relative overflow-hidden bg-gradient-to-b from-blue to-green pt-20 text-frost">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 px-5 pb-20 pt-10 md:flex-row md:justify-between md:px-10 md:pb-28 md:pt-16">
             <h1 data-hero className="max-w-[565px]">
-              <span className="font-serif-accent block text-[42px] leading-[1.1] tracking-[-0.02em] md:text-[62px] md:leading-[69px]">
+              <span className="font-serif-accent block text-[36px] leading-[1.15] tracking-[-0.02em] sm:text-[42px] md:text-[62px] md:leading-[69px]">
                 Cannabis Audience
               </span>
-              <span className="block text-[40px] font-light leading-[1.1] md:text-[60px] md:leading-[65px]">
+              <span className="block text-[34px] font-light leading-[1.15] sm:text-[40px] md:text-[60px] md:leading-[65px]">
                 Data Categories
               </span>
             </h1>

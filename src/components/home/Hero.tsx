@@ -94,19 +94,19 @@ export function Hero() {
         <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-14 md:gap-[56px]">
           <div data-hero className="max-w-[809px]">
             <h1 className="flex flex-col">
-              <span className="flex flex-wrap items-start gap-x-4">
-                <span className="text-[40px] font-light leading-[1.1] text-glow md:text-[60px] md:leading-[65px]">
+              <span className="flex flex-wrap items-start gap-x-3 gap-y-1 sm:gap-x-4">
+                <span className="text-[34px] font-light leading-[1.15] text-glow sm:text-[40px] md:text-[60px] md:leading-[65px]">
                   Reach
                 </span>
-                <span className="font-serif-accent text-[42px] leading-[1.1] tracking-[-0.02em] text-green md:text-[62px] md:leading-[69px]">
+                <span className="font-serif-accent text-[36px] leading-[1.15] tracking-[-0.02em] text-green sm:text-[42px] md:text-[62px] md:leading-[69px]">
                   Cannabis Consumers
                 </span>
               </span>
-              <span className="flex flex-wrap items-start gap-x-4">
-                <span className="text-[40px] font-light leading-[1.1] text-glow md:text-[60px] md:leading-[65px]">
+              <span className="flex flex-wrap items-start gap-x-3 gap-y-1 sm:gap-x-4">
+                <span className="text-[34px] font-light leading-[1.15] text-glow sm:text-[40px] md:text-[60px] md:leading-[65px]">
                   with
                 </span>
-                <span className="font-serif-accent text-[42px] leading-[1.1] tracking-[-0.02em] text-green md:text-[62px] md:leading-[69px]">
+                <span className="font-serif-accent text-[36px] leading-[1.15] tracking-[-0.02em] text-green sm:text-[42px] md:text-[62px] md:leading-[69px]">
                   Opt-In Email Leads.
                 </span>
               </span>
@@ -125,7 +125,7 @@ export function Hero() {
                 households across the United States.
               </p>
             </div>
-            <div data-hero className="w-full md:w-auto">
+            <div data-hero className="flex w-full justify-center md:w-auto md:justify-end">
               <BookACall />
             </div>
           </div>

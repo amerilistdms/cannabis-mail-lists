@@ -6,43 +6,51 @@ const cards = [
   {
     title: "Postal Mailing Lists",
     image: "/images/figma/card-1.png",
-    description: "Target cannabis households with verified postal lists for direct mail campaigns.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
   {
     title: "Consumer Email Lists",
     image: "/images/figma/card-2.png",
-    description: "Reach opt-in cannabis consumers with permission-based email audiences.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
   {
     title: "Phone Numbers",
     image: "/images/figma/card-3.png",
     split: true,
-    description: "Connect with cannabis buyers through phone-verified contact data.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
   {
     title: "Digital Audience Targeting",
     image: "/images/figma/card-4.png",
-    description: "Activate cannabis audiences across digital advertising channels.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
   {
     title: "Custom Audience Matching",
     image: "/images/figma/card-5.png",
-    description: "Match and enhance your customer file with cannabis audience insights.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
   {
     title: "Direct Mail Campaign Support",
     image: "/images/figma/card-6.png",
-    description: "Support postcard, letter, and catalog programs with cannabis responders.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
   {
     title: "Permission Based Email Marketing",
     image: "/images/figma/card-7.png",
-    description: "Build compliant email programs with verified cannabis subscribers.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
   {
     title: "Audience Modeling & Profiling",
     image: "/images/figma/card-8.png",
-    description: "Model lookalike cannabis audiences from your best customers.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
   },
 ];
 
@@ -101,16 +109,16 @@ export function WhyChooseUs() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
           <h2
             data-reveal-child
-            className="shrink-0 text-[36px] leading-none md:text-[48px] lg:max-w-[492px]"
+            className="shrink-0 text-[32px] leading-none sm:text-[36px] md:text-[48px] lg:max-w-[492px]"
           >
-            <span className="block whitespace-nowrap font-light leading-[1.2] text-glow md:leading-[65px]">
+            <span className="block font-light leading-[1.2] text-glow sm:whitespace-nowrap md:leading-[65px]">
               Why Cannabis Brands
             </span>
             <span className="font-serif-accent block leading-[1.2] tracking-[-0.02em] text-green md:leading-[69px]">
               Choose Us?
             </span>
           </h2>
-          <div data-reveal-child className="max-w-[546px] shrink-0 space-y-4 text-base leading-6 text-foreground lg:pt-1">
+          <div data-reveal-child className="w-full max-w-[546px] space-y-4 text-base leading-6 text-foreground lg:shrink-0 lg:pt-1">
             <p>
               At Cannabis Email Lists, we help cannabis companies, CBD brands, dispensaries,
               ancillary service providers, and cannabis focused marketers identify and connect with

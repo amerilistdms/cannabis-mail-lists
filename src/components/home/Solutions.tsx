@@ -81,7 +81,7 @@ export function Solutions() {
     <div ref={trackRef} className="relative z-0 h-[320vh]">
       <section className="sticky top-0 flex min-h-[100svh] items-center bg-blue text-frost">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-5 py-16 md:gap-[72px] md:px-10 md:py-20">
-          <h2 className="text-[36px] md:text-[48px]">
+          <h2 className="text-[32px] sm:text-[36px] md:text-[48px]">
             <span className="block font-light leading-[1.2] text-glow md:leading-[65px]">
               Solutions For Every
             </span>

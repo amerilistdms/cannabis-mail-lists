@@ -23,7 +23,7 @@ export function Accuracy() {
           className="flex w-full max-w-[513px] flex-col items-start justify-between gap-10 px-5 pb-16 md:min-h-[513px] md:px-0 md:py-10 md:pr-10"
         >
           <div>
-            <h2 className="mb-4 flex flex-wrap items-start gap-x-2 text-[36px] md:text-[48px]">
+            <h2 className="mb-4 flex flex-wrap items-start gap-x-2 text-[32px] sm:text-[36px] md:text-[48px]">
               <span className="font-light leading-[1.2] text-glow md:leading-[65px]">Why</span>
               <span className="font-serif-accent leading-[1.2] tracking-[-0.02em] text-green md:leading-[69px]">
                 Accuracy

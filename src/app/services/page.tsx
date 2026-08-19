@@ -55,10 +55,10 @@ export default function ServicesPage() {
         <section className="bg-gradient-to-b from-blue to-green pt-20 text-frost">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 px-5 pb-16 pt-10 md:flex-row md:items-start md:justify-between md:gap-12 md:px-10 md:pb-24 md:pt-16">
             <h1 data-hero className="max-w-[565px]">
-              <span className="font-serif-accent block whitespace-nowrap text-[42px] leading-[1.1] tracking-[-0.02em] md:text-[62px] md:leading-[69px]">
+              <span className="font-serif-accent block text-[36px] leading-[1.15] tracking-[-0.02em] sm:text-[42px] sm:whitespace-nowrap md:text-[62px] md:leading-[69px]">
                 Cannabis Marketing
               </span>
-              <span className="block whitespace-nowrap text-[40px] font-light leading-[1.1] md:text-[60px] md:leading-[65px]">
+              <span className="block text-[34px] font-light leading-[1.15] sm:text-[40px] sm:whitespace-nowrap md:text-[60px] md:leading-[65px]">
                 Data Solutions
               </span>
             </h1>

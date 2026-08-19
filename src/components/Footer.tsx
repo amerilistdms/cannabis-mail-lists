@@ -97,7 +97,7 @@ export function Footer() {
             </div>
           </div>
 
-          <p className="whitespace-nowrap text-center text-[22px] leading-tight text-frost sm:text-[28px] md:text-[33px]">
+          <p className="text-center text-[18px] leading-snug text-frost sm:text-[26px] md:text-[33px] md:leading-tight">
             A division of AmeriList. Audience data &amp; marketing solutions since 2002
           </p>
         </div>

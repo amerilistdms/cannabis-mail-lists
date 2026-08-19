@@ -16,7 +16,7 @@ export default function AboutPage() {
         <section className="bg-frost pt-20">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col items-center gap-12 px-5 py-12 md:gap-[75px] md:px-10 md:py-16">
             <div data-hero className="flex max-w-[900px] flex-col items-center gap-8 text-center md:gap-[51px]">
-              <h1 className="whitespace-nowrap text-[32px] leading-[1.1] sm:text-[42px] md:text-[56px] lg:text-[62px]">
+              <h1 className="text-[32px] leading-[1.15] sm:text-[42px] md:text-[56px] lg:text-[62px] lg:whitespace-nowrap">
                 <span className="font-serif-accent tracking-[-0.02em] text-blue">About Cannabis</span>{" "}
                 <span className="font-light text-foreground">Email Lists</span>
               </h1>

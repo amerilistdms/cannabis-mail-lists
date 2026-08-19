@@ -21,9 +21,9 @@ export function BlogIndex() {
     <section className="bg-frost pt-20">
       <div className="mx-auto flex w-full max-w-[1120px] flex-col items-center px-5 pb-16 pt-10 md:px-10 md:pb-24 md:pt-12">
         <div data-hero className="mb-10 flex max-w-[720px] flex-col items-center gap-6 text-center md:mb-14 md:gap-[24px]">
-          <h1 className="flex flex-wrap items-baseline justify-center gap-x-2.5 text-[40px] leading-none md:text-[60px] md:leading-[65px]">
+          <h1 className="flex flex-wrap items-baseline justify-center gap-x-2.5 text-[34px] leading-none sm:text-[40px] md:text-[60px] md:leading-[65px]">
             <span className="font-light text-foreground">Our</span>
-            <span className="font-serif-accent text-[42px] leading-none tracking-[-0.02em] text-green md:text-[62px] md:leading-[69px]">
+            <span className="font-serif-accent text-[36px] leading-none tracking-[-0.02em] text-green sm:text-[42px] md:text-[62px] md:leading-[69px]">
               Consumer
             </span>
             <span className="font-light text-foreground">Stories</span>

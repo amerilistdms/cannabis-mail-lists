@@ -48,10 +48,10 @@ export default function ContactPage() {
           <div className="relative z-10 mx-auto flex min-h-[calc(100svh-96px)] w-full max-w-[1200px] flex-col justify-between gap-12 px-5 pb-16 pt-10 md:gap-16 md:px-10 md:pb-20 md:pt-8">
             <div data-hero className="max-w-[730px] space-y-8">
               <h1>
-                <span className="block whitespace-nowrap text-[36px] font-light leading-[1.1] sm:text-[48px] md:text-[60px] md:leading-[65px]">
+                <span className="block text-[32px] font-light leading-[1.15] sm:text-[48px] sm:whitespace-nowrap md:text-[60px] md:leading-[65px]">
                   Let&apos;s Discuss Your
                 </span>
-                <span className="font-serif-accent block whitespace-nowrap text-[38px] leading-[1.1] tracking-[-0.02em] sm:text-[52px] md:text-[62px] md:leading-[69px]">
+                <span className="font-serif-accent block text-[34px] leading-[1.15] tracking-[-0.02em] sm:text-[52px] sm:whitespace-nowrap md:text-[62px] md:leading-[69px]">
                   Cannabis Marketing Goals
                 </span>
               </h1>
@@ -72,7 +72,7 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div data-hero className="flex flex-wrap gap-4 md:gap-8">
+            <div data-hero className="flex flex-col gap-4 sm:flex-row sm:flex-wrap md:gap-8">
               <ArrowButton
                 href="mailto:info@amerilist.com?subject=Cannabis%20Email%20Lists%20-%20Call%20Request"
                 variant="outline-white"
