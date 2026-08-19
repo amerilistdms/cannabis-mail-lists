@@ -14,11 +14,7 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Fixed header height — keep in sync with page top padding (`pt-20` / `80px`). */
-export const HEADER_HEIGHT_CLASS = "h-20";
-
 type HeaderProps = {
-  /** Transparent over dark heroes until scroll */
   overDark?: boolean;
 };
 
@@ -51,7 +47,7 @@ export function Header({ overDark = true }: HeaderProps) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 ${HEADER_HEIGHT_CLASS} border-b transition-[background-color,border-color,box-shadow] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 h-20 border-b transition-[background-color,border-color,box-shadow] duration-300 ${
         solid
           ? "border-black/5 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-md"
           : "border-transparent bg-transparent"

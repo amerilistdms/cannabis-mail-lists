@@ -108,7 +108,6 @@ body {
   animation: marquee 40s linear infinite;
 }
 
-/* Prevent FOUC before GSAP page-load / reveal tweens */
 [data-hero],
 [data-reveal]:not(:has([data-reveal-child])),
 [data-reveal-child] {

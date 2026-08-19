@@ -51,7 +51,6 @@ export function Solutions() {
       if (reduce) return;
 
       const setStepFromProgress = (progress: number) => {
-        // Finish steps before Accuracy fully covers (~last 30% of track).
         const stepped = Math.min(1, progress / 0.7);
         const next = Math.min(4, Math.max(1, Math.ceil(stepped * 4) || 1));
         if (next === activeRef.current) return;

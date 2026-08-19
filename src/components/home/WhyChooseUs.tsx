@@ -3,26 +3,58 @@
 import Image from "next/image";
 
 const cards = [
-  { title: "Postal Mailing Lists", image: "/images/figma/card-1.png" },
-  { title: "Consumer Email Lists", image: "/images/figma/card-2.png" },
-  { title: "Phone Numbers", image: "/images/figma/card-3.png", split: true },
-  { title: "Digital Audience Targeting", image: "/images/figma/card-4.png" },
-  { title: "Custom Audience Matching", image: "/images/figma/card-5.png" },
-  { title: "Direct Mail Campaign Support", image: "/images/figma/card-6.png" },
-  { title: "Permission Based Email Marketing", image: "/images/figma/card-7.png" },
-  { title: "Audience Modeling & Profiling", image: "/images/figma/card-8.png" },
+  {
+    title: "Postal Mailing Lists",
+    image: "/images/figma/card-1.png",
+    description: "Target cannabis households with verified postal lists for direct mail campaigns.",
+  },
+  {
+    title: "Consumer Email Lists",
+    image: "/images/figma/card-2.png",
+    description: "Reach opt-in cannabis consumers with permission-based email audiences.",
+  },
+  {
+    title: "Phone Numbers",
+    image: "/images/figma/card-3.png",
+    split: true,
+    description: "Connect with cannabis buyers through phone-verified contact data.",
+  },
+  {
+    title: "Digital Audience Targeting",
+    image: "/images/figma/card-4.png",
+    description: "Activate cannabis audiences across digital advertising channels.",
+  },
+  {
+    title: "Custom Audience Matching",
+    image: "/images/figma/card-5.png",
+    description: "Match and enhance your customer file with cannabis audience insights.",
+  },
+  {
+    title: "Direct Mail Campaign Support",
+    image: "/images/figma/card-6.png",
+    description: "Support postcard, letter, and catalog programs with cannabis responders.",
+  },
+  {
+    title: "Permission Based Email Marketing",
+    image: "/images/figma/card-7.png",
+    description: "Build compliant email programs with verified cannabis subscribers.",
+  },
+  {
+    title: "Audience Modeling & Profiling",
+    image: "/images/figma/card-8.png",
+    description: "Model lookalike cannabis audiences from your best customers.",
+  },
 ];
-
-const lorem =
-  "Lorem ipsum dolor sit amet consectetur. Feugiat sit feugiat tempus nulla pellentesque sit imperdiet.";
 
 function Card({
   title,
   image,
+  description,
   split,
 }: {
   title: string;
   image: string;
+  description: string;
   split?: boolean;
 }) {
   return (
@@ -41,7 +73,7 @@ function Card({
         )}
       </h3>
       <div className="absolute inset-x-0 bottom-0 bg-[rgba(239,242,249,0.6)] px-4 py-2.5 backdrop-blur-[7px]">
-        <p className="text-sm tracking-[0.14px] text-foreground">{lorem}</p>
+        <p className="text-sm tracking-[0.14px] text-foreground">{description}</p>
       </div>
     </article>
   );

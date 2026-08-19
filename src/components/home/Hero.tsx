@@ -3,12 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-/**
- * Figma CTA 247:1260 — 202×202 badge.
- * Leaf: /images/figma/book-call-leaf.svg
- * Ring copy placed at fixed offsets so bullets sit evenly between phrases
- * (textLength stretching was crushing "•" into the next "B").
- */
 function BookACall() {
   const radius = 90;
   const phrases = [0, 1, 2, 3] as const;
