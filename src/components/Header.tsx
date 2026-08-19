@@ -69,7 +69,7 @@ export function Header({ overDark = true }: HeaderProps) {
           />
         </Link>
 
-        <nav className={`hidden items-center gap-[45px] lg:flex ${textClass}`}>
+        <nav className={`hidden items-center gap-7 lg:flex ${textClass}`}>
           {links.map((link) => {
             const active = isActive(pathname, link.href);
             return (

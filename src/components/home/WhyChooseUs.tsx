@@ -68,7 +68,7 @@ export function WhyChooseUs() {
 
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-start">
           <h2 data-reveal-child className="text-[36px] leading-none md:text-[48px]">
-            <span className="block font-light leading-[1.2] text-glow md:leading-[65px]">
+            <span className="block whitespace-nowrap font-light leading-[1.2] text-glow md:leading-[65px]">
               Why Cannabis Brands
             </span>
             <span className="font-serif-accent block leading-[1.2] tracking-[-0.02em] text-green md:leading-[69px]">
