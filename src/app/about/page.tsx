@@ -15,14 +15,10 @@ export default function AboutPage() {
         <Header overDark={false} />
         <section className="bg-frost pt-[88px] md:pt-[96px]">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col items-center gap-12 px-5 py-12 md:gap-[75px] md:px-10 md:py-16">
-            <div data-hero className="flex max-w-[795px] flex-col items-center gap-8 text-center md:gap-[51px]">
-              <h1>
-                <span className="font-serif-accent block text-[42px] leading-[1.1] tracking-[-0.02em] text-blue md:text-[62px] md:leading-[69px]">
-                  About Cannabis
-                </span>
-                <span className="block text-[40px] font-light leading-[1.1] text-foreground md:text-[60px] md:leading-[65px]">
-                  Email Lists
-                </span>
+            <div data-hero className="flex max-w-[900px] flex-col items-center gap-8 text-center md:gap-[51px]">
+              <h1 className="whitespace-nowrap text-[32px] leading-[1.1] sm:text-[42px] md:text-[56px] lg:text-[62px]">
+                <span className="font-serif-accent tracking-[-0.02em] text-blue">About Cannabis</span>{" "}
+                <span className="font-light text-foreground">Email Lists</span>
               </h1>
               <p className="text-base leading-6 text-foreground">
                 Cannabis Email Lists was created to help cannabis marketers, CBD brands,

@@ -55,10 +55,10 @@ export default function ServicesPage() {
         <section className="bg-gradient-to-b from-blue to-green pt-[88px] text-frost md:pt-[96px]">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 px-5 pb-16 pt-10 md:flex-row md:items-start md:justify-between md:gap-12 md:px-10 md:pb-24 md:pt-16">
             <h1 data-hero className="max-w-[565px]">
-              <span className="font-serif-accent block text-[42px] leading-[1.1] tracking-[-0.02em] md:text-[62px] md:leading-[69px]">
+              <span className="font-serif-accent block whitespace-nowrap text-[42px] leading-[1.1] tracking-[-0.02em] md:text-[62px] md:leading-[69px]">
                 Cannabis Marketing
               </span>
-              <span className="block text-[40px] font-light leading-[1.1] md:text-[60px] md:leading-[65px]">
+              <span className="block whitespace-nowrap text-[40px] font-light leading-[1.1] md:text-[60px] md:leading-[65px]">
                 Data Solutions
               </span>
             </h1>
@@ -94,7 +94,13 @@ export default function ServicesPage() {
                 }`}
               >
                 <div className="grid size-20 shrink-0 place-items-center bg-green">
-                  <Image src={item.icon} alt="" width={40} height={40} className="size-10" />
+                  <Image
+                    src={item.icon}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
                 </div>
                 <h2 className="w-full text-lg font-bold md:w-[260px] md:shrink-0">{item.title}</h2>
                 <p className="flex-1 text-base leading-6">{item.copy}</p>

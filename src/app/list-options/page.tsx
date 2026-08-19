@@ -98,9 +98,15 @@ export default function ListOptionsPage() {
                   index < lists.length - 1 ? "border-b border-dashed border-foreground/40" : ""
                 }`}
               >
-                <div className="grid size-20 shrink-0 place-items-center bg-green">
-                  <Image src={item.icon} alt="" width={40} height={40} className="size-10" />
-                </div>
+              <div className="grid size-20 shrink-0 place-items-center bg-green">
+                <Image
+                  src={item.icon}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 object-contain"
+                />
+              </div>
                 <h2 className="w-full text-lg font-bold md:w-[260px] md:shrink-0">{item.title}</h2>
                 <p className="flex-1 text-base leading-6">{item.copy}</p>
               </article>
