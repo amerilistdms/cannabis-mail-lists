@@ -35,9 +35,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <main className="flex-1">
       <ScrollEffects>
-        <div data-hero>
-          <Header overDark={false} />
-        </div>
+        <Header overDark={false} />
         <article className="bg-white pt-[88px] md:pt-[96px]">
           <div className="mx-auto w-full max-w-[720px] px-5 py-12 md:px-10 md:py-16">
             <p data-hero className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-green">

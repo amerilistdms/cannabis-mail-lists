@@ -15,9 +15,7 @@ export default function BlogPage() {
   return (
     <main className="flex-1">
       <ScrollEffects>
-        <div data-hero>
-          <Header overDark={false} />
-        </div>
+        <Header overDark={false} />
         <section className="bg-white pt-[88px] md:pt-[96px]">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col items-center gap-10 px-5 py-12 md:px-10 md:py-16">
             <div data-hero className="max-w-[617px] text-center">

@@ -22,9 +22,7 @@ export default function ContactPage() {
   return (
     <main className="flex-1">
       <ScrollEffects>
-        <div data-hero>
-          <Header overDark />
-        </div>
+        <Header overDark />
         <section
           className="overflow-hidden pt-[88px] text-frost md:pt-[96px]"
           style={{

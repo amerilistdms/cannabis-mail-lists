@@ -12,9 +12,7 @@ export default function HomePage() {
   return (
     <main className="flex-1">
       <ScrollEffects>
-        <div data-hero>
-          <Header overDark />
-        </div>
+        <Header overDark />
         <Hero />
         <div data-reveal>
           <WhyChooseUs />

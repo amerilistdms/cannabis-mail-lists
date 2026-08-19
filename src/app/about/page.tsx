@@ -12,9 +12,7 @@ export default function AboutPage() {
   return (
     <main className="flex-1">
       <ScrollEffects>
-        <div data-hero>
-          <Header overDark={false} />
-        </div>
+        <Header overDark={false} />
         <section className="bg-frost pt-[88px] md:pt-[96px]">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col items-center gap-12 px-5 py-12 md:gap-[75px] md:px-10 md:py-16">
             <div data-hero className="flex max-w-[795px] flex-col items-center gap-8 text-center md:gap-[51px]">

@@ -51,9 +51,7 @@ export default function ServicesPage() {
   return (
     <main className="flex-1">
       <ScrollEffects>
-        <div data-hero>
-          <Header overDark />
-        </div>
+        <Header overDark />
         <section className="bg-gradient-to-b from-blue to-green pt-[88px] text-frost md:pt-[96px]">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 px-5 pb-16 pt-10 md:flex-row md:items-start md:justify-between md:gap-12 md:px-10 md:pb-24 md:pt-16">
             <h1 data-hero className="max-w-[565px]">

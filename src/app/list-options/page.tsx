@@ -56,9 +56,7 @@ export default function ListOptionsPage() {
   return (
     <main className="flex-1">
       <ScrollEffects>
-        <div data-hero>
-          <Header overDark />
-        </div>
+        <Header overDark />
         <section className="relative overflow-hidden bg-gradient-to-b from-blue to-green pt-[88px] text-frost md:pt-[96px]">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 px-5 pb-20 pt-10 md:flex-row md:justify-between md:px-10 md:pb-28 md:pt-16">
             <h1 data-hero className="max-w-[565px]">
