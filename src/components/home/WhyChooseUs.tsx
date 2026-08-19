@@ -66,8 +66,11 @@ export function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-start">
-          <h2 data-reveal-child className="text-[36px] leading-none md:text-[48px]">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
+          <h2
+            data-reveal-child
+            className="shrink-0 text-[36px] leading-none md:text-[48px] lg:max-w-[492px]"
+          >
             <span className="block whitespace-nowrap font-light leading-[1.2] text-glow md:leading-[65px]">
               Why Cannabis Brands
             </span>
@@ -75,7 +78,7 @@ export function WhyChooseUs() {
               Choose Us?
             </span>
           </h2>
-          <div data-reveal-child className="max-w-[546px] space-y-4 text-base leading-6 text-foreground">
+          <div data-reveal-child className="max-w-[546px] shrink-0 space-y-4 text-base leading-6 text-foreground lg:pt-1">
             <p>
               At Cannabis Email Lists, we help cannabis companies, CBD brands, dispensaries,
               ancillary service providers, and cannabis focused marketers identify and connect with
