@@ -2,22 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { posts } from "@/data/posts";
 
 export function BlogIndex() {
   const [query, setQuery] = useState("");
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return posts;
-    return posts.filter(
-      (post) =>
-        post.title.toLowerCase().includes(q) ||
-        post.category.toLowerCase().includes(q) ||
-        post.excerpt.toLowerCase().includes(q)
-    );
-  }, [query]);
+  const q = query.trim().toLowerCase();
+  const filtered = q
+    ? posts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(q) ||
+          post.category.toLowerCase().includes(q) ||
+          post.excerpt.toLowerCase().includes(q)
+      )
+    : posts;
 
   return (
     <section className="bg-frost pt-20">
