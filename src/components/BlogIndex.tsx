@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useDeferredValue, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { posts, type Post } from "@/data/posts";
 
 const KEYWORDS = [
@@ -39,6 +39,9 @@ function matchesQuery(post: Post, query: string) {
 
 export function BlogIndex() {
   const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const deferredQuery = useDeferredValue(query);
   const filtered = useMemo(
     () => posts.filter((post) => matchesQuery(post, deferredQuery)),
@@ -55,8 +58,25 @@ export function BlogIndex() {
     });
   }, [query]);
 
+  useEffect(() => {
+    const onPointerDown = (event: PointerEvent) => {
+      if (!searchRef.current?.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, []);
+
+  const openSearch = () => {
+    setOpen(true);
+    inputRef.current?.focus();
+  };
+
   const applyKeyword = (keyword: string) => {
     setQuery(keyword);
+    setOpen(false);
+    inputRef.current?.blur();
   };
 
   return (
@@ -75,12 +95,18 @@ export function BlogIndex() {
             communities.
           </p>
 
-          <div className="mt-2 flex w-full max-w-[495px] flex-col items-center gap-4">
+          <div ref={searchRef} className="relative mt-2 w-full max-w-[495px]">
             <label className="flex w-full items-center justify-between gap-3 rounded-full border border-foreground py-[5px] pl-5 pr-[5px]">
               <span className="sr-only">Search Stories</span>
               <input
+                ref={inputRef}
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setOpen(true);
+                }}
+                onFocus={() => setOpen(true)}
+                onClick={() => setOpen(true)}
                 placeholder="Search Stories"
                 autoComplete="off"
                 spellCheck={false}
@@ -89,7 +115,11 @@ export function BlogIndex() {
               {hasQuery ? (
                 <button
                   type="button"
-                  onClick={() => setQuery("")}
+                  onClick={() => {
+                    setQuery("");
+                    setOpen(true);
+                    inputRef.current?.focus();
+                  }}
                   className="grid size-10 shrink-0 place-items-center rounded-full bg-blue text-frost"
                   aria-label="Clear search"
                 >
@@ -98,9 +128,11 @@ export function BlogIndex() {
                   </span>
                 </button>
               ) : (
-                <span
+                <button
+                  type="button"
+                  onClick={openSearch}
                   className="grid size-10 shrink-0 place-items-center rounded-full bg-blue"
-                  aria-hidden
+                  aria-label="Show search suggestions"
                 >
                   <Image
                     src="/images/blog/search-icon.svg"
@@ -109,16 +141,16 @@ export function BlogIndex() {
                     height={19}
                     className="size-[18px]"
                   />
-                </span>
+                </button>
               )}
             </label>
 
-            {suggestions.length > 0 && (
-              <div className="flex w-full flex-col items-center gap-2.5">
-                <p className="text-xs uppercase tracking-[0.14px] text-foreground/55">
-                  {hasQuery ? "Suggested keywords" : "Try searching"}
+            {open && suggestions.length > 0 && (
+              <div className="absolute left-0 right-0 top-[calc(100%+10px)] z-20 rounded-2xl border border-foreground/10 bg-white p-4 shadow-[0_12px_40px_rgba(30,30,30,0.12)]">
+                <p className="mb-3 text-left text-xs uppercase tracking-[0.14px] text-foreground/55">
+                  Suggested keywords
                 </p>
-                <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
+                <div className="flex flex-wrap gap-2">
                   {suggestions.map((keyword) => {
                     const active = normalize(query) === normalize(keyword);
                     return (
@@ -130,7 +162,7 @@ export function BlogIndex() {
                         className={`border px-3 py-1 text-sm tracking-[0.14px] transition-colors ${
                           active
                             ? "border-green bg-green text-frost"
-                            : "border-foreground/25 text-foreground hover:border-green hover:text-green"
+                            : "border-foreground/20 text-foreground hover:border-green hover:text-green"
                         }`}
                       >
                         {keyword}
@@ -179,28 +211,17 @@ export function BlogIndex() {
         ) : (
           <div className="flex w-full max-w-[420px] flex-col items-center gap-4 py-16 text-center">
             <p className="text-base text-foreground">No stories match “{query.trim()}”.</p>
-            {suggestions.length > 0 ? (
-              <div className="flex flex-wrap justify-center gap-2">
-                {suggestions.slice(0, 4).map((keyword) => (
-                  <button
-                    key={keyword}
-                    type="button"
-                    onClick={() => applyKeyword(keyword)}
-                    className="border border-foreground/25 px-3 py-1 text-sm text-foreground hover:border-green hover:text-green"
-                  >
-                    {keyword}
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <button
-                type="button"
-                onClick={() => setQuery("")}
-                className="text-sm text-blue underline-offset-2 hover:underline"
-              >
-                Clear search
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={() => {
+                setQuery("");
+                setOpen(true);
+                inputRef.current?.focus();
+              }}
+              className="text-sm text-blue underline-offset-2 hover:underline"
+            >
+              Clear search
+            </button>
           </div>
         )}
       </div>
