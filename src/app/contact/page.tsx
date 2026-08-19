@@ -24,7 +24,7 @@ export default function ContactPage() {
       <ScrollEffects>
         <Header overDark />
         <section
-          className="relative min-h-[100svh] overflow-hidden pt-[88px] text-frost md:pt-[96px]"
+          className="relative min-h-[100svh] overflow-hidden pt-20 text-frost"
           style={{
             backgroundImage:
               "linear-gradient(180deg, rgb(0, 112, 171) 0%, rgb(60, 107, 59) 110.71%)",

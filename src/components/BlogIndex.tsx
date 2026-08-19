@@ -20,7 +20,7 @@ export function BlogIndex() {
   }, [query]);
 
   return (
-    <section className="bg-frost pt-[88px] md:pt-[96px]">
+    <section className="bg-frost pt-20">
       <div className="mx-auto flex w-full max-w-[1120px] flex-col items-center px-5 pb-16 pt-10 md:px-10 md:pb-24 md:pt-12">
         <div data-hero className="mb-10 flex max-w-[720px] flex-col items-center gap-6 text-center md:mb-14 md:gap-[24px]">
           <h1 className="flex flex-wrap items-baseline justify-center gap-x-2.5 text-[40px] leading-none md:text-[60px] md:leading-[65px]">

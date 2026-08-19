@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <main className="flex-1">
       <ScrollEffects>
         <Header overDark={false} />
-        <section className="bg-frost pt-[88px] md:pt-[96px]">
+        <section className="bg-frost pt-20">
           <div className="mx-auto grid w-full max-w-[1120px] gap-12 px-5 py-12 md:px-10 md:py-16 lg:grid-cols-[minmax(0,594px)_320px] lg:justify-between lg:gap-10">
             <article data-hero className="min-w-0">
               <div className="mb-6 flex flex-col gap-2 md:mb-6">

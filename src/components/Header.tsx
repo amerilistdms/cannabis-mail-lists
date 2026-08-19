@@ -14,10 +14,21 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+/** Fixed header height — keep in sync with page top padding (`pt-20` / `80px`). */
+export const HEADER_HEIGHT_CLASS = "h-20";
+
 type HeaderProps = {
-  /** Force dark (transparent over dark hero) until scroll */
+  /** Transparent over dark heroes until scroll */
   overDark?: boolean;
 };
+
+function isActive(pathname: string, href: string) {
+  return (
+    pathname === href ||
+    (href === "/home" && pathname === "/") ||
+    (href !== "/home" && pathname.startsWith(`${href}/`))
+  );
+}
 
 export function Header({ overDark = true }: HeaderProps) {
   const [open, setOpen] = useState(false);
@@ -31,18 +42,22 @@ export function Header({ overDark = true }: HeaderProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   const solid = scrolled || !overDark;
   const textClass = solid ? "text-foreground" : "text-frost";
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 ${HEADER_HEIGHT_CLASS} border-b transition-[background-color,border-color,box-shadow] duration-300 ${
         solid
-          ? "border-b border-black/5 bg-white/95 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-md"
-          : "bg-transparent py-5 md:py-6"
+          ? "border-black/5 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-md"
+          : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between px-5 md:px-10">
+      <div className="mx-auto flex h-full w-full max-w-[1120px] items-center justify-between px-5 md:px-10">
         <Link href="/home" className="relative z-50 shrink-0">
           <Image
             src={solid ? "/images/logo nav colored.svg" : "/images/logo nav white.svg"}
@@ -50,15 +65,13 @@ export function Header({ overDark = true }: HeaderProps) {
             width={141}
             height={29}
             priority
+            className="h-[29px] w-[141px]"
           />
         </Link>
 
         <nav className={`hidden items-center gap-[45px] lg:flex ${textClass}`}>
           {links.map((link) => {
-            const active =
-              pathname === link.href ||
-              (link.href === "/home" && pathname === "/") ||
-              (link.href !== "/home" && pathname.startsWith(`${link.href}/`));
+            const active = isActive(pathname, link.href);
             return (
               <Link
                 key={link.href}
@@ -83,6 +96,7 @@ export function Header({ overDark = true }: HeaderProps) {
             solid ? "border-foreground/15" : "border-white/20"
           }`}
           aria-label="Toggle menu"
+          aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
           <div className="flex w-5 flex-col gap-1.5">
@@ -94,7 +108,7 @@ export function Header({ overDark = true }: HeaderProps) {
       </div>
 
       {open && (
-        <div className="absolute inset-x-0 top-full border-t border-black/5 bg-white px-5 py-4 shadow-lg lg:hidden">
+        <div className="absolute inset-x-0 top-full border-b border-black/5 bg-white px-5 py-4 shadow-lg lg:hidden">
           <nav className="flex flex-col gap-2">
             {links.map((link) => (
               <Link
@@ -102,10 +116,7 @@ export function Header({ overDark = true }: HeaderProps) {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={`rounded-full px-3 py-2 text-sm ${
-                  pathname === link.href ||
-                  (link.href !== "/home" && pathname.startsWith(`${link.href}/`))
-                    ? "bg-green text-frost"
-                    : "text-foreground"
+                  isActive(pathname, link.href) ? "bg-green text-frost" : "text-foreground"
                 }`}
               >
                 {link.label}

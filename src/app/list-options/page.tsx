@@ -57,7 +57,7 @@ export default function ListOptionsPage() {
     <main className="flex-1">
       <ScrollEffects>
         <Header overDark />
-        <section className="relative overflow-hidden bg-gradient-to-b from-blue to-green pt-[88px] text-frost md:pt-[96px]">
+        <section className="relative overflow-hidden bg-gradient-to-b from-blue to-green pt-20 text-frost">
           <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 px-5 pb-20 pt-10 md:flex-row md:justify-between md:px-10 md:pb-28 md:pt-16">
             <h1 data-hero className="max-w-[565px]">
               <span className="font-serif-accent block text-[42px] leading-[1.1] tracking-[-0.02em] md:text-[62px] md:leading-[69px]">
