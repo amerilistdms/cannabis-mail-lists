@@ -56,6 +56,7 @@ function Block({ block }: { block: ContentBlock }) {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 594px"
+            quality={90}
           />
         </div>
       );
@@ -99,7 +100,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const related = posts.filter((item) => item.slug !== post.slug);
   const heroImage =
     post.slug === "best-cannabis-email-marketing-strategies-2026"
-      ? "/images/blog/article-hero.png"
+      ? "/images/blog/article-hero.jpg"
       : post.image;
 
   return (
@@ -124,6 +125,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 594px"
+                  quality={90}
                   priority
                 />
               </div>

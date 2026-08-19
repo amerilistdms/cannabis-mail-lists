@@ -20,7 +20,7 @@ export const posts: Post[] = [
     slug: "best-cannabis-email-marketing-strategies-2026",
     category: "Cannabis Email Marketing",
     title: "Best Cannabis Email Marketing Strategies for 2026",
-    image: "/images/blog/post-1.png",
+    image: "/images/blog/post-1.jpg",
     excerpt:
       "Email marketing remains one of the highest-performing digital channels for cannabis businesses. Whether you're promoting a dispensary, CBD brand, cannabis accessories, or a B2B service, building an engaged email audience allows you to communicate directly with customers while reducing dependence on social media algorithms.",
     content: [
@@ -82,7 +82,7 @@ export const posts: Post[] = [
       },
       {
         type: "image",
-        src: "/images/blog/article-mid.png",
+        src: "/images/blog/article-mid.jpg",
         alt: "Hands typing on a laptop with data overlays",
       },
       {
@@ -140,7 +140,7 @@ export const posts: Post[] = [
       },
       {
         type: "image",
-        src: "/images/blog/article-idea.png",
+        src: "/images/blog/article-idea.jpg",
         alt: "Data, analysis, and idea neon graphic",
       },
       {
@@ -179,10 +179,6 @@ export const posts: Post[] = [
         type: "paragraph",
         text: "Learn how cannabis consumer databases help brands identify qualified audiences, improve targeting, and create more effective marketing campaigns.",
       },
-      {
-        type: "paragraph",
-        text: "A cannabis consumer database organizes verified contact and demographic attributes so marketers can segment by intent, location, and purchase behavior instead of guessing who might respond.",
-      },
     ],
   },
   {
@@ -196,10 +192,6 @@ export const posts: Post[] = [
       {
         type: "paragraph",
         text: "Discover how targeted cannabis mailing lists can support customer acquisition, increase campaign reach, and improve marketing performance.",
-      },
-      {
-        type: "paragraph",
-        text: "Postal and email lists built for cannabis audiences help brands reach verified consumers across channels while keeping acquisition costs predictable.",
       },
     ],
   },
@@ -215,10 +207,6 @@ export const posts: Post[] = [
         type: "paragraph",
         text: "Explore how CBD buyer lists can help businesses connect with interested consumers and build more relevant, data-driven marketing campaigns.",
       },
-      {
-        type: "paragraph",
-        text: "CBD buyer lists surface people already interested in wellness and hemp products, making outreach more relevant and more likely to convert.",
-      },
     ],
   },
   {
@@ -233,10 +221,6 @@ export const posts: Post[] = [
         type: "paragraph",
         text: "From audience targeting to email marketing, learn practical strategies for attracting new customers and growing your cannabis business.",
       },
-      {
-        type: "paragraph",
-        text: "Combine accurate list data, clear offers, multi-channel follow-up, and measured creative tests to improve acquisition without wasting spend.",
-      },
     ],
   },
   {
@@ -250,10 +234,6 @@ export const posts: Post[] = [
       {
         type: "paragraph",
         text: "Understand how accurate cannabis marketing data helps businesses personalize campaigns, improve audience segmentation, and maximize marketing ROI.",
-      },
-      {
-        type: "paragraph",
-        text: "Clean, compliant cannabis marketing data is the foundation for segmentation, personalization, and measurable return on every campaign dollar.",
       },
     ],
   },

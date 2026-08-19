@@ -73,7 +73,8 @@ export function BlogIndex() {
                   alt={post.title}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 320px"
+                  sizes="(max-width: 768px) 100vw, 360px"
+                  quality={90}
                 />
               </Link>
               <div className="flex flex-col gap-4 text-left">
