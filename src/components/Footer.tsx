@@ -79,10 +79,18 @@ export function Footer() {
                 mail, digital advertising and customer acquisition.
               </p>
               <div className="flex flex-wrap gap-5">
-                <ArrowButton href="/contact" variant="outline-white" accent="green">
+                <ArrowButton
+                  href="mailto:info@amerilist.com?subject=Request%20Free%20Counts"
+                  variant="outline-white"
+                  accent="green"
+                >
                   Request Free Counts
                 </ArrowButton>
-                <ArrowButton href="/contact" variant="outline-white" accent="green">
+                <ArrowButton
+                  href="mailto:info@amerilist.com?subject=Book%20a%20Call"
+                  variant="outline-white"
+                  accent="green"
+                >
                   Book a Call
                 </ArrowButton>
               </div>

@@ -1,61 +1,110 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ScrollEffects } from "@/components/ScrollEffects";
+import { getPost, posts } from "@/data/posts";
 
-export default function BlogPostPage() {
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export function generateStaticParams() {
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPost(slug);
+  if (!post) return { title: "Blog | Cannabis Email Lists" };
+  return {
+    title: `${post.title} | Cannabis Email Lists`,
+    description: post.excerpt,
+  };
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getPost(slug);
+  if (!post) notFound();
+
+  const related = posts.filter((item) => item.slug !== post.slug).slice(0, 3);
+
   return (
     <main className="flex-1">
-      <Header overDark={false} />
-      <article className="bg-white pt-[88px] md:pt-[96px]">
-        <div className="mx-auto w-full max-w-[720px] px-5 py-12 md:px-10 md:py-16">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-green">
-            Cannabis Email Marketing
-          </p>
-          <h1 className="mb-6 text-3xl font-medium leading-tight md:text-4xl">
-            Best Cannabis Email Marketing Strategies for 2026
-          </h1>
-          <p className="mb-10 text-base leading-7 text-foreground/85">
-            Email marketing remains one of the highest-performing digital channels for cannabis
-            businesses. Whether you&apos;re promoting a dispensary, CBD brand, cannabis accessories,
-            or a B2B service, building an engaged email audience allows you to communicate directly
-            with customers while reducing dependence on social media algorithms.
-          </p>
-
-          <section className="space-y-4">
-            <h2 className="text-xl font-semibold">Introduction</h2>
-            <p className="leading-7 text-foreground/85">
-              Unlike paid advertising platforms that often restrict cannabis promotions,
-              permission-based email marketing gives brands greater control over customer
-              relationships. The key is focusing on compliant list growth, valuable content, and
-              consistent communication.
-            </p>
-          </section>
-
-          <section className="mt-10 space-y-4">
-            <h2 className="text-xl font-semibold">Why Cannabis Email Marketing Matters?</h2>
-            <p className="leading-7 text-foreground/85">
-              The cannabis industry continues to become more competitive each year. Brands that
-              build strong customer relationships often outperform those relying solely on paid
-              advertising.
-            </p>
-            <p className="leading-7 text-foreground/85">An effective email strategy can help you:</p>
-            <ul className="list-disc space-y-2 pl-5 leading-7 text-foreground/85">
-              <li>Increase repeat purchases</li>
-              <li>Announce new product launches</li>
-              <li>Share educational cannabis content</li>
-              <li>Promote dispensary events</li>
-              <li>Build long-term customer loyalty</li>
-            </ul>
-          </section>
-
-          <p className="mt-12">
-            <Link href="/blog" className="text-blue hover:underline">
-              ← Back to blog
-            </Link>
-          </p>
+      <ScrollEffects>
+        <div data-hero>
+          <Header overDark={false} />
         </div>
-      </article>
-      <Footer />
+        <article className="bg-white pt-[88px] md:pt-[96px]">
+          <div className="mx-auto w-full max-w-[720px] px-5 py-12 md:px-10 md:py-16">
+            <p data-hero className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-green">
+              {post.category} · {post.date}
+            </p>
+            <h1 data-hero className="mb-8 text-3xl font-medium leading-tight md:text-4xl">
+              {post.title}
+            </h1>
+            <div data-hero className="relative mb-10 aspect-[16/9] overflow-hidden rounded-xl">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="720px"
+                priority
+              />
+            </div>
+            <div data-reveal className="space-y-6">
+              {post.body.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)} data-reveal-child className="leading-7 text-foreground/85">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <p data-reveal className="mt-12">
+              <Link href="/blog" className="text-blue hover:underline">
+                ← Back to blog
+              </Link>
+            </p>
+          </div>
+        </article>
+
+        <section data-reveal className="border-t border-line bg-frost py-16">
+          <div className="mx-auto w-full max-w-[1120px] px-5 md:px-10">
+            <h2 data-reveal-child className="mb-8 text-2xl font-medium md:text-3xl">
+              Discover More
+            </h2>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((item) => (
+                <article key={item.slug} data-reveal-child className="flex flex-col gap-3">
+                  <Link
+                    href={`/blog/${item.slug}`}
+                    className="relative aspect-[4/3] overflow-hidden rounded-xl"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="360px"
+                    />
+                  </Link>
+                  <h3 className="text-lg font-semibold leading-snug">
+                    <Link href={`/blog/${item.slug}`} className="hover:text-green">
+                      {item.title}
+                    </Link>
+                  </h3>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        <div data-reveal>
+          <Footer />
+        </div>
+      </ScrollEffects>
     </main>
   );
 }
