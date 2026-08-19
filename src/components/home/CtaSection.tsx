@@ -21,8 +21,11 @@ export function CtaSection() {
         aria-hidden
       />
 
-      <div className="relative mx-auto flex w-full max-w-[545px] flex-col items-center gap-10 px-5 md:gap-[57px]">
-        <div className="flex flex-col items-center gap-6 text-center">
+      <div
+        data-reveal
+        className="relative mx-auto flex w-full max-w-[545px] flex-col items-center gap-10 px-5 md:gap-[57px]"
+      >
+        <div data-reveal-child className="flex flex-col items-center gap-6 text-center">
           <h2 className="text-[36px] md:text-[48px]">
             <span className="block font-light leading-[1.2] text-glow md:leading-[65px]">
               Ready to Reach More
@@ -37,7 +40,7 @@ export function CtaSection() {
           </p>
         </div>
 
-        <div className="flex w-full flex-col items-center gap-10">
+        <div data-reveal-child className="flex w-full flex-col items-center gap-10">
           <div className="relative h-[220px] w-full overflow-hidden rounded-xl md:h-[295px]">
             <Image
               src="/images/figma/cta-photo.png"

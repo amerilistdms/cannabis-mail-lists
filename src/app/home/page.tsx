@@ -11,8 +11,10 @@ import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 export default function HomePage() {
   return (
     <main className="flex-1">
-      <Header overDark />
       <ScrollEffects>
+        <div data-hero>
+          <Header overDark />
+        </div>
         <Hero />
         <div data-reveal>
           <WhyChooseUs />
@@ -22,11 +24,11 @@ export default function HomePage() {
         </div>
         <Solutions />
         <Accuracy />
+        <CtaSection />
         <div data-reveal>
-          <CtaSection />
+          <Footer />
         </div>
       </ScrollEffects>
-      <Footer />
     </main>
   );
 }

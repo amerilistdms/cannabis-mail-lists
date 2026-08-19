@@ -108,6 +108,21 @@ body {
   animation: marquee 40s linear infinite;
 }
 
+/* Prevent FOUC before GSAP page-load / reveal tweens */
+[data-hero],
+[data-reveal]:not(:has([data-reveal-child])),
+[data-reveal-child] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hero],
+  [data-reveal],
+  [data-reveal-child] {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-spin-slow,
   .animate-splash,

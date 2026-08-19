@@ -3,9 +3,12 @@ import { ArrowButton } from "@/components/ArrowButton";
 
 export function Accuracy() {
   return (
-    <section className="relative z-10 bg-white">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-10 overflow-hidden md:flex-row md:gap-12">
-        <div className="relative aspect-square w-full max-w-[600px] shrink-0 md:w-[50%]">
+    <section className="relative z-10 -mt-[100svh] bg-white">
+      <div
+        data-reveal
+        className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-10 overflow-hidden md:flex-row md:gap-12"
+      >
+        <div data-reveal-child className="relative aspect-square w-full max-w-[600px] shrink-0 md:w-[50%]">
           <Image
             src="/images/figma/accuracy.png"
             alt="Why accuracy matters illustration"
@@ -15,7 +18,10 @@ export function Accuracy() {
           />
         </div>
 
-        <div className="flex w-full max-w-[513px] flex-col items-start justify-between gap-10 px-5 pb-16 md:min-h-[513px] md:px-0 md:py-10 md:pr-10">
+        <div
+          data-reveal-child
+          className="flex w-full max-w-[513px] flex-col items-start justify-between gap-10 px-5 pb-16 md:min-h-[513px] md:px-0 md:py-10 md:pr-10"
+        >
           <div>
             <h2 className="mb-4 flex flex-wrap items-start gap-x-2 text-[36px] md:text-[48px]">
               <span className="font-light leading-[1.2] text-glow md:leading-[65px]">Why</span>

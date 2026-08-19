@@ -37,7 +37,10 @@ export function Audiences() {
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto w-full max-w-[1200px]">
-        <h2 className="mb-12 px-5 text-[36px] md:mb-[107px] md:px-10 md:text-[48px]">
+        <h2
+          data-reveal-child
+          className="mb-12 px-5 text-[36px] md:mb-[107px] md:px-10 md:text-[48px]"
+        >
           <span className="font-serif-accent block leading-[1.2] tracking-[-0.02em] text-green md:leading-[69px]">
             Cannabis Audiences
           </span>
@@ -50,6 +53,7 @@ export function Audiences() {
           {audiences.map((item) => (
             <article
               key={item.title}
+              data-reveal-child
               className="flex flex-col gap-10 border-[0.2px] border-foreground p-8 md:p-10"
             >
               <div className="relative size-8 overflow-hidden">

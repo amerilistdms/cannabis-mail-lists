@@ -53,7 +53,7 @@ export function WhyChooseUs() {
   return (
     <section className="bg-frost py-16 md:py-20">
       <div className="mx-auto mb-12 flex w-full max-w-[1120px] flex-col gap-10 px-5 md:mb-[45px] md:gap-[45px] md:px-10">
-        <div className="flex items-center gap-3">
+        <div data-reveal-child className="flex items-center gap-3">
           <Image
             src="/images/figma/leaf-stroke.svg"
             alt=""
@@ -67,7 +67,7 @@ export function WhyChooseUs() {
         </div>
 
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-start">
-          <h2 className="text-[36px] leading-none md:text-[48px]">
+          <h2 data-reveal-child className="text-[36px] leading-none md:text-[48px]">
             <span className="block font-light leading-[1.2] text-glow md:leading-[65px]">
               Why Cannabis Brands
             </span>
@@ -75,7 +75,7 @@ export function WhyChooseUs() {
               Choose Us?
             </span>
           </h2>
-          <div className="max-w-[546px] space-y-4 text-base leading-6 text-foreground">
+          <div data-reveal-child className="max-w-[546px] space-y-4 text-base leading-6 text-foreground">
             <p>
               At Cannabis Email Lists, we help cannabis companies, CBD brands, dispensaries,
               ancillary service providers, and cannabis focused marketers identify and connect with
@@ -90,7 +90,7 @@ export function WhyChooseUs() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden">
+      <div data-reveal-child className="relative overflow-hidden">
         <div className="animate-marquee flex w-max gap-[27px] px-5 will-change-transform hover:[animation-play-state:paused]">
           {loop.map((card, i) => (
             <Card key={`${card.title}-${i}`} {...card} />

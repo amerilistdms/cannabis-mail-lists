@@ -51,7 +51,9 @@ export function Solutions() {
       if (reduce) return;
 
       const setStepFromProgress = (progress: number) => {
-        const next = Math.min(4, Math.max(1, Math.ceil(progress * 4) || 1));
+        // Finish steps before Accuracy fully covers (~last 30% of track).
+        const stepped = Math.min(1, progress / 0.7);
+        const next = Math.min(4, Math.max(1, Math.ceil(stepped * 4) || 1));
         if (next === activeRef.current) return;
         activeRef.current = next;
         setActive(next);
@@ -77,7 +79,7 @@ export function Solutions() {
   );
 
   return (
-    <div ref={trackRef} className="relative z-0 h-[340vh]">
+    <div ref={trackRef} className="relative z-0 h-[320vh]">
       <section className="sticky top-0 flex min-h-[100svh] items-center bg-blue text-frost">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-12 px-5 py-16 md:gap-[72px] md:px-10 md:py-20">
           <h2 className="text-[36px] md:text-[48px]">

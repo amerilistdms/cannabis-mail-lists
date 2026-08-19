@@ -65,7 +65,7 @@ export function Hero() {
 
       <div className="relative flex flex-col gap-[48px] px-5 pb-10 pt-6 md:gap-[75px] md:px-10 md:pb-10 md:pt-8">
         <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 md:gap-14">
-          <div className="max-w-[809px]">
+          <div data-hero className="max-w-[809px]">
             <h1 className="flex flex-col">
               <span className="flex flex-wrap items-start gap-x-4">
                 <span className="text-[40px] font-light leading-[1.1] text-glow md:text-[60px] md:leading-[65px]">
@@ -90,7 +90,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
-            <div className="flex max-w-[562px] items-center gap-4">
+            <div data-hero className="flex max-w-[562px] items-center gap-4">
               <span className="h-[75px] w-[3px] shrink-0 rounded-[30px] bg-green" aria-hidden />
               <p className="text-base leading-6 text-frost">
                 Reach verified cannabis consumers, marijuana enthusiasts, CBD buyers, dispensary
@@ -98,7 +98,9 @@ export function Hero() {
                 households across the United States.
               </p>
             </div>
-            <BookACall />
+            <div data-hero>
+              <BookACall />
+            </div>
           </div>
         </div>
       </div>
