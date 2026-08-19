@@ -89,7 +89,7 @@ export function Footer() {
             </div>
           </div>
 
-          <p className="text-center text-[28px] leading-tight text-frost md:text-[33px]">
+          <p className="whitespace-nowrap text-center text-[22px] leading-tight text-frost sm:text-[28px] md:text-[33px]">
             A division of AmeriList. Audience data &amp; marketing solutions since 2002
           </p>
         </div>

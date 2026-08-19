@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   title: "Cannabis Email Lists | AmeriList",
   description:
     "Reach verified cannabis consumers with opt-in email leads, mailing lists, and audience targeting from AmeriList.",
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
