@@ -97,14 +97,17 @@ body {
   animation: splash-fade 2.2s ease-in-out forwards;
 }
 
-.carousel-track {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.carousel-track::-webkit-scrollbar {
-  display: none;
+.animate-marquee {
+  animation: marquee 55s linear infinite;
 }
 
 [data-hero],
@@ -123,7 +126,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-spin-slow,
-  .animate-splash {
+  .animate-splash,
+  .animate-marquee {
     animation: none;
   }
 
