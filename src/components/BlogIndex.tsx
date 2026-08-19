@@ -5,6 +5,17 @@ import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 import { posts, type Post } from "@/data/posts";
 
+const KEYWORDS = [
+  "Email Marketing",
+  "Mailing Lists",
+  "CBD",
+  "Consumer Data",
+  "Customer Acquisition",
+  "Marketing Data",
+  "Buyer Lists",
+  "Database",
+] as const;
+
 function normalize(value: string) {
   return value
     .toLowerCase()
@@ -35,6 +46,19 @@ export function BlogIndex() {
   );
   const hasQuery = query.trim().length > 0;
 
+  const suggestions = useMemo(() => {
+    const q = normalize(query);
+    if (!q) return [...KEYWORDS];
+    return KEYWORDS.filter((keyword) => {
+      const key = normalize(keyword);
+      return key.includes(q) || q.includes(key) || key.split(" ").some((part) => part.startsWith(q));
+    });
+  }, [query]);
+
+  const applyKeyword = (keyword: string) => {
+    setQuery(keyword);
+  };
+
   return (
     <section className="bg-frost pt-20">
       <div className="mx-auto flex w-full max-w-[1120px] flex-col items-center px-5 pb-16 pt-10 md:px-10 md:pb-24 md:pt-12">
@@ -51,42 +75,72 @@ export function BlogIndex() {
             communities.
           </p>
 
-          <label className="mt-2 flex w-full max-w-[495px] items-center justify-between gap-3 rounded-full border border-foreground py-[5px] pl-5 pr-[5px]">
-            <span className="sr-only">Search Stories</span>
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search Stories"
-              autoComplete="off"
-              spellCheck={false}
-              className="min-w-0 flex-1 bg-transparent text-sm tracking-[0.14px] text-foreground outline-none placeholder:text-foreground"
-            />
-            {hasQuery ? (
-              <button
-                type="button"
-                onClick={() => setQuery("")}
-                className="grid size-10 shrink-0 place-items-center rounded-full bg-blue text-frost"
-                aria-label="Clear search"
-              >
-                <span className="text-lg leading-none" aria-hidden>
-                  ×
+          <div className="mt-2 flex w-full max-w-[495px] flex-col items-center gap-4">
+            <label className="flex w-full items-center justify-between gap-3 rounded-full border border-foreground py-[5px] pl-5 pr-[5px]">
+              <span className="sr-only">Search Stories</span>
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search Stories"
+                autoComplete="off"
+                spellCheck={false}
+                className="min-w-0 flex-1 bg-transparent text-sm tracking-[0.14px] text-foreground outline-none placeholder:text-foreground"
+              />
+              {hasQuery ? (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  className="grid size-10 shrink-0 place-items-center rounded-full bg-blue text-frost"
+                  aria-label="Clear search"
+                >
+                  <span className="text-lg leading-none" aria-hidden>
+                    ×
+                  </span>
+                </button>
+              ) : (
+                <span
+                  className="grid size-10 shrink-0 place-items-center rounded-full bg-blue"
+                  aria-hidden
+                >
+                  <Image
+                    src="/images/blog/search-icon.svg"
+                    alt=""
+                    width={19}
+                    height={19}
+                    className="size-[18px]"
+                  />
                 </span>
-              </button>
-            ) : (
-              <span
-                className="grid size-10 shrink-0 place-items-center rounded-full bg-blue"
-                aria-hidden
-              >
-                <Image
-                  src="/images/blog/search-icon.svg"
-                  alt=""
-                  width={19}
-                  height={19}
-                  className="size-[18px]"
-                />
-              </span>
+              )}
+            </label>
+
+            {suggestions.length > 0 && (
+              <div className="flex w-full flex-col items-center gap-2.5">
+                <p className="text-xs uppercase tracking-[0.14px] text-foreground/55">
+                  {hasQuery ? "Suggested keywords" : "Try searching"}
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
+                  {suggestions.map((keyword) => {
+                    const active = normalize(query) === normalize(keyword);
+                    return (
+                      <button
+                        key={keyword}
+                        type="button"
+                        onClick={() => applyKeyword(keyword)}
+                        aria-pressed={active}
+                        className={`border px-3 py-1 text-sm tracking-[0.14px] transition-colors ${
+                          active
+                            ? "border-green bg-green text-frost"
+                            : "border-foreground/25 text-foreground hover:border-green hover:text-green"
+                        }`}
+                      >
+                        {keyword}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             )}
-          </label>
+          </div>
         </div>
 
         {filtered.length > 0 ? (
@@ -124,16 +178,29 @@ export function BlogIndex() {
           </div>
         ) : (
           <div className="flex w-full max-w-[420px] flex-col items-center gap-4 py-16 text-center">
-            <p className="text-base text-foreground">
-              No stories match “{query.trim()}”.
-            </p>
-            <button
-              type="button"
-              onClick={() => setQuery("")}
-              className="text-sm text-blue underline-offset-2 hover:underline"
-            >
-              Clear search
-            </button>
+            <p className="text-base text-foreground">No stories match “{query.trim()}”.</p>
+            {suggestions.length > 0 ? (
+              <div className="flex flex-wrap justify-center gap-2">
+                {suggestions.slice(0, 4).map((keyword) => (
+                  <button
+                    key={keyword}
+                    type="button"
+                    onClick={() => applyKeyword(keyword)}
+                    className="border border-foreground/25 px-3 py-1 text-sm text-foreground hover:border-green hover:text-green"
+                  >
+                    {keyword}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                className="text-sm text-blue underline-offset-2 hover:underline"
+              >
+                Clear search
+              </button>
+            )}
           </div>
         )}
       </div>
