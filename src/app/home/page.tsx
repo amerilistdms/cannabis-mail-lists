@@ -20,12 +20,8 @@ export default function HomePage() {
         <div data-reveal>
           <Audiences />
         </div>
-        <div data-reveal>
-          <Solutions />
-        </div>
-        <div data-reveal>
-          <Accuracy />
-        </div>
+        <Solutions />
+        <Accuracy />
         <div data-reveal>
           <CtaSection />
         </div>

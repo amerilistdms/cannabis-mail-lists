@@ -34,7 +34,7 @@ export function ArrowButton({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center gap-2.5 rounded-full py-[5px] pl-5 pr-[5px] text-sm tracking-[0.14px] transition-opacity hover:opacity-90 ${variants[variant]} ${className}`}
+      className={`inline-flex w-fit max-w-full items-center gap-2.5 rounded-full py-[5px] pl-5 pr-[5px] text-sm tracking-[0.14px] transition-opacity hover:opacity-90 ${variants[variant]} ${className}`}
     >
       <span>{children}</span>
       <span className={`grid size-10 place-items-center rounded-full ${accents[accent]}`} aria-hidden>

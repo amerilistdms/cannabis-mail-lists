@@ -47,8 +47,8 @@ export function CtaSection() {
               sizes="545px"
             />
           </div>
-          <ArrowButton href="/contact" accent="blue" className="max-w-full text-left">
-            Request Counts, Pricing &amp; Audience Recommendations Today
+          <ArrowButton href="/contact" accent="blue">
+            Request Counts Now
           </ArrowButton>
         </div>
       </div>
