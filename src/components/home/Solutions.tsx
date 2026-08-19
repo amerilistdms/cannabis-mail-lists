@@ -93,23 +93,34 @@ export function Solutions() {
           <div className="flex w-full flex-col gap-8">
             <div className="flex w-full items-center">
               {steps.map((step, index) => {
+                const isReached = step.id <= active;
                 const isActive = step.id === active;
                 const isLast = index === steps.length - 1;
+                const lineFilled = active > step.id;
                 return (
                   <div key={step.id} className={`flex items-center ${isLast ? "" : "flex-1"}`}>
                     <button
                       type="button"
                       onClick={() => goToStep(step.id)}
                       aria-pressed={isActive}
-                      className={`grid size-10 shrink-0 place-items-center rounded-full text-base transition ${
-                        isActive
+                      aria-current={isActive ? "step" : undefined}
+                      className={`grid size-10 shrink-0 place-items-center rounded-full text-base transition-colors duration-300 ${
+                        isReached
                           ? "bg-frost text-foreground"
-                          : "border border-frost bg-transparent text-frost"
-                      }`}
+                          : "border border-frost/70 bg-transparent text-frost"
+                      } ${isActive ? "ring-2 ring-frost/40 ring-offset-2 ring-offset-blue" : ""}`}
                     >
                       {step.id}
                     </button>
-                    {!isLast && <div className="mx-0 h-px flex-1 bg-frost/70" />}
+                    {!isLast && (
+                      <div className="relative mx-0 h-px flex-1 overflow-hidden bg-frost/30">
+                        <span
+                          className={`absolute inset-y-0 left-0 block bg-frost transition-[width] duration-500 ease-out ${
+                            lineFilled ? "w-full" : "w-0"
+                          }`}
+                        />
+                      </div>
+                    )}
                   </div>
                 );
               })}
