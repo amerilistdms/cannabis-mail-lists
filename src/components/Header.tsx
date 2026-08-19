@@ -55,20 +55,20 @@ export function Header({ overDark = true }: HeaderProps) {
 
         <nav className={`hidden items-center gap-[45px] lg:flex ${textClass}`}>
           {links.map((link) => {
-            const active = pathname === link.href || (link.href === "/home" && pathname === "/");
-            const isContact = link.href === "/contact";
+            const active =
+              pathname === link.href ||
+              (link.href === "/home" && pathname === "/") ||
+              (link.href !== "/home" && pathname.startsWith(`${link.href}/`));
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`rounded-full px-2.5 py-[3px] text-sm tracking-[0.14px] transition-colors ${
-                  isContact
-                    ? "bg-green px-4 py-1.5 text-frost hover:opacity-90"
-                    : active
-                      ? "bg-green text-frost"
-                      : solid
-                        ? "text-foreground hover:text-green"
-                        : "text-frost hover:opacity-80"
+                  active
+                    ? "bg-green text-frost"
+                    : solid
+                      ? "text-foreground hover:text-green"
+                      : "text-frost hover:opacity-80"
                 }`}
               >
                 {link.label}
@@ -102,7 +102,10 @@ export function Header({ overDark = true }: HeaderProps) {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={`rounded-full px-3 py-2 text-sm ${
-                  pathname === link.href ? "bg-green text-frost" : "text-foreground"
+                  pathname === link.href ||
+                  (link.href !== "/home" && pathname.startsWith(`${link.href}/`))
+                    ? "bg-green text-frost"
+                    : "text-foreground"
                 }`}
               >
                 {link.label}

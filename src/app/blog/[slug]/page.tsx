@@ -98,10 +98,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!post) notFound();
 
   const related = posts.filter((item) => item.slug !== post.slug);
-  const heroImage =
-    post.slug === "best-cannabis-email-marketing-strategies-2026"
-      ? "/images/blog/article-hero.jpg"
-      : post.image;
+  const heroImage = post.image;
 
   return (
     <main className="flex-1">

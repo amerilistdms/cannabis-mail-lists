@@ -20,7 +20,7 @@ export const posts: Post[] = [
     slug: "best-cannabis-email-marketing-strategies-2026",
     category: "Cannabis Email Marketing",
     title: "Best Cannabis Email Marketing Strategies for 2026",
-    image: "/images/blog/post-1.jpg",
+    image: "/images/blog/article-hero.jpg",
     excerpt:
       "Email marketing remains one of the highest-performing digital channels for cannabis businesses. Whether you're promoting a dispensary, CBD brand, cannabis accessories, or a B2B service, building an engaged email audience allows you to communicate directly with customers while reducing dependence on social media algorithms.",
     content: [
@@ -171,7 +171,7 @@ export const posts: Post[] = [
     slug: "what-is-a-cannabis-consumer-database",
     category: "Cannabis Consumer Data",
     title: "What Is a Cannabis Consumer Database?",
-    image: "/images/blog/post-2.png",
+    image: "/images/blog/article-hero2.jpg",
     excerpt:
       "Learn how cannabis consumer databases help brands identify qualified audiences, improve targeting, and create more effective marketing campaigns.",
     content: [
@@ -185,7 +185,7 @@ export const posts: Post[] = [
     slug: "how-cannabis-mailing-lists-help-grow-your-business",
     category: "Cannabis Mailing Lists",
     title: "How Cannabis Mailing Lists Help Grow Your Business?",
-    image: "/images/blog/post-3.png",
+    image: "/images/blog/article-hero3.jpg",
     excerpt:
       "Discover how targeted cannabis mailing lists can support customer acquisition, increase campaign reach, and improve marketing performance.",
     content: [
@@ -199,7 +199,7 @@ export const posts: Post[] = [
     slug: "using-cbd-buyer-lists-to-reach-the-right-audience",
     category: "CBD Marketing",
     title: "Using CBD Buyer Lists to Reach the Right Audience",
-    image: "/images/blog/post-4.png",
+    image: "/images/blog/article-hero4.jpg",
     excerpt:
       "Explore how CBD buyer lists can help businesses connect with interested consumers and build more relevant, data-driven marketing campaigns.",
     content: [
@@ -213,7 +213,7 @@ export const posts: Post[] = [
     slug: "5-ways-to-improve-cannabis-customer-acquisition",
     category: "Cannabis Customer Acquisition",
     title: "5 Ways to Improve Cannabis Customer Acquisition",
-    image: "/images/blog/post-5.png",
+    image: "/images/blog/article-hero5.jpg",
     excerpt:
       "From audience targeting to email marketing, learn practical strategies for attracting new customers and growing your cannabis business.",
     content: [
@@ -227,7 +227,7 @@ export const posts: Post[] = [
     slug: "why-cannabis-marketing-data-matters",
     category: "Marketing Data",
     title: "Why Cannabis Marketing Data Matters?",
-    image: "/images/blog/post-6.png",
+    image: "/images/blog/article-hero6.jpg",
     excerpt:
       "Understand how accurate cannabis marketing data helps businesses personalize campaigns, improve audience segmentation, and maximize marketing ROI.",
     content: [
