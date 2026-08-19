@@ -97,17 +97,14 @@ body {
   animation: splash-fade 2.2s ease-in-out forwards;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.carousel-track {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.animate-marquee {
-  animation: marquee 40s linear infinite;
+.carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 [data-hero],
@@ -126,42 +123,11 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-spin-slow,
-  .animate-splash,
-  .animate-marquee {
+  .animate-splash {
     animation: none;
   }
 
   html {
     scroll-behavior: auto;
   }
-}
-
-.cards-scroll {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 280px;
-  gap: 27px;
-  overflow-x: auto;
-  padding: 0 40px 8px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-@media (min-width: 768px) {
-  .cards-scroll {
-    grid-auto-columns: 320px;
-  }
-}
-
-.cards-scroll > * {
-  scroll-snap-align: start;
-}
-
-.cards-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.cards-scroll::-webkit-scrollbar-thumb {
-  background: #c5cad6;
-  border-radius: 999px;
 }
