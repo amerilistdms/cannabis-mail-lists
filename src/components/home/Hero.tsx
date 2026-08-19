@@ -5,14 +5,13 @@ import Link from "next/link";
 
 /**
  * Figma CTA 247:1260 — 202×202 badge.
- * Leaf asset: /images/figma/book-call-leaf.svg (from home/cannabis plain green.svg).
- * Circular copy is SVG textPath (not a flat export — Figma only ships the leaf vector).
+ * Leaf: /images/figma/book-call-leaf.svg
+ * Ring copy placed at fixed offsets so bullets sit evenly between phrases
+ * (textLength stretching was crushing "•" into the next "B").
  */
 function BookACall() {
-  const label = "BOOK A CALL • BOOK A CALL • BOOK A CALL • BOOK A CALL • ";
-  // Outer text ring — radius leaves clear air around the 82×106 leaf
   const radius = 90;
-  const circumference = 2 * Math.PI * radius;
+  const phrases = [0, 1, 2, 3] as const;
 
   return (
     <Link
@@ -32,23 +31,37 @@ function BookACall() {
             fill="none"
           />
         </defs>
-        <text
-          fill="#EFF2F9"
-          fontSize="11"
-          fontFamily="var(--font-jakarta), sans-serif"
-          letterSpacing="1.8"
-        >
-          <textPath
-            href="#bookCallPath"
-            textLength={circumference}
-            lengthAdjust="spacing"
+
+        {phrases.map((i) => (
+          <text
+            key={`phrase-${i}`}
+            fill="#EFF2F9"
+            fontSize="10.5"
+            fontFamily="var(--font-jakarta), sans-serif"
+            letterSpacing="1.2"
+            textAnchor="middle"
           >
-            {label}
-          </textPath>
-        </text>
+            <textPath href="#bookCallPath" startOffset={`${12.5 + i * 25}%`}>
+              BOOK A CALL
+            </textPath>
+          </text>
+        ))}
+
+        {phrases.map((i) => (
+          <text
+            key={`dot-${i}`}
+            fill="#EFF2F9"
+            fontSize="10.5"
+            fontFamily="var(--font-jakarta), sans-serif"
+            textAnchor="middle"
+          >
+            <textPath href="#bookCallPath" startOffset={`${i * 25}%`}>
+              •
+            </textPath>
+          </text>
+        ))}
       </svg>
 
-      {/* Figma: leaf ~40.7% wide, top 46.35px in 202px frame */}
       <span className="pointer-events-none absolute left-1/2 top-[23%] h-[52.5%] w-[40.7%] -translate-x-1/2">
         <Image
           src="/images/figma/book-call-leaf.svg"
