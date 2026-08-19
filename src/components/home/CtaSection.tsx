@@ -10,7 +10,7 @@ export function CtaSection() {
           alt=""
           width={280}
           height={360}
-          className="pointer-events-none absolute left-0 top-1/2 hidden w-[180px] -translate-y-1/2 rotate-[23deg] opacity-90 md:block lg:w-[220px] xl:w-[260px]"
+          className="pointer-events-none absolute left-[-48px] top-1/2 hidden w-[140px] -translate-y-1/2 rotate-[23deg] opacity-90 md:block lg:left-[-64px] lg:w-[170px] xl:left-[-80px] xl:w-[200px]"
           aria-hidden
         />
         <Image
@@ -18,7 +18,7 @@ export function CtaSection() {
           alt=""
           width={280}
           height={360}
-          className="pointer-events-none absolute right-0 top-1/2 hidden w-[180px] -translate-y-1/2 -scale-y-100 rotate-[157deg] opacity-90 md:block lg:w-[220px] xl:w-[260px]"
+          className="pointer-events-none absolute right-[-48px] top-1/2 hidden w-[140px] -translate-y-1/2 -scale-y-100 rotate-[157deg] opacity-90 md:block lg:right-[-64px] lg:w-[170px] xl:right-[-80px] xl:w-[200px]"
           aria-hidden
         />
 
