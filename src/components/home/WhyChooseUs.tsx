@@ -7,50 +7,50 @@ const cards = [
     title: "Postal Mailing Lists",
     image: "/images/figma/card-1.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Reach targeted households with accurate postal mailing lists built around your ideal audience.",
   },
   {
     title: "Consumer Email Lists",
     image: "/images/figma/card-2.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Connect with relevant consumers through targeted email lists tailored to your audience.",
   },
   {
     title: "Phone Numbers",
     image: "/images/figma/card-3.png",
     split: true,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Access quality phone data to connect with prospects through targeted outreach campaigns.",
   },
   {
     title: "Digital Audience Targeting",
     image: "/images/figma/card-4.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Reach the right digital audiences with data-driven targeting built around your campaign goals.",
   },
   {
     title: "Custom Audience Matching",
     image: "/images/figma/card-5.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Match your customer data with targeted audiences to expand reach and improve campaign performance.",
   },
   {
     title: "Direct Mail Campaign Support",
     image: "/images/figma/card-6.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Simplify your direct mail campaigns with audience selection, data, and campaign support.",
   },
   {
     title: "Permission Based Email Marketing",
     image: "/images/figma/card-7.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Engage opted-in audiences with permission-based email marketing designed for meaningful outreach.",
   },
   {
     title: "Audience Modeling & Profiling",
     image: "/images/figma/card-8.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Understand your ideal customers through detailed audience profiles and predictive modeling.",
   },
 ];
 
