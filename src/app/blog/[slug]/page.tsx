@@ -105,8 +105,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <ScrollEffects>
         <Header overDark={false} />
         <section className="bg-frost pt-20">
-          <div className="mx-auto grid w-full max-w-[1120px] gap-12 px-5 py-12 md:px-10 md:py-16 lg:grid-cols-[minmax(0,594px)_320px] lg:justify-between lg:gap-10">
-            <article data-hero className="min-w-0">
+          <div
+            className={`mx-auto grid w-full max-w-[1120px] gap-12 px-5 py-12 md:px-10 md:py-16 ${
+              related.length > 0
+                ? "lg:grid-cols-[minmax(0,594px)_320px] lg:justify-between lg:gap-10"
+                : "lg:max-w-[594px]"
+            }`}
+          >
+            <article data-hero className="min-w-0 lg:col-span-1">
               <div className="mb-6 flex flex-col gap-2 md:mb-6">
                 <p className="font-serif text-xl italic text-green">{post.category}</p>
                 <h1 className="text-[28px] font-bold leading-tight text-foreground md:text-[32px]">
@@ -152,18 +158,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </p>
             </article>
 
-            <aside data-reveal className="min-w-0 lg:pt-[133px]">
-              <h2 data-reveal-child className="mb-12 text-2xl font-bold text-blue">
-                Discover More
-              </h2>
-              <div className="flex flex-col gap-[70px]">
-                {related.map((item) => (
-                  <div key={item.slug} data-reveal-child>
-                    <SidebarCard post={item} />
-                  </div>
-                ))}
-              </div>
-            </aside>
+            {related.length > 0 && (
+              <aside data-reveal className="min-w-0 lg:pt-[133px]">
+                <h2 data-reveal-child className="mb-12 text-2xl font-bold text-blue">
+                  Discover More
+                </h2>
+                <div className="flex flex-col gap-[70px]">
+                  {related.map((item) => (
+                    <div key={item.slug} data-reveal-child>
+                      <SidebarCard post={item} />
+                    </div>
+                  ))}
+                </div>
+              </aside>
+            )}
           </div>
         </section>
         <div data-reveal>
