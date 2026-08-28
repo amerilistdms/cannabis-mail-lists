@@ -51,9 +51,14 @@ export function CtaSection() {
                 sizes="545px"
               />
             </div>
-            <ArrowButton href="/contact" accent="blue">
-              Request Counts Now
-            </ArrowButton>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <ArrowButton href="/contact#contact-form" accent="blue">
+                Request Counts Now
+              </ArrowButton>
+              <ArrowButton href="/contact" accent="green">
+                Book a Call
+              </ArrowButton>
+            </div>
           </div>
         </div>
       </div>

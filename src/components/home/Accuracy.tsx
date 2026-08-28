@@ -42,14 +42,19 @@ export function Accuracy() {
               </p>
               <p>
                 As a division of AmeriList, a leading provider of audience data and marketing
-                solutions since 2002, Cannabis Email Lists combines specialized cannabis audience
+                solutions since 2002. Cannabis Email Lists combines specialized cannabis audience
                 expertise with decades of direct marketing experience.
               </p>
             </div>
           </div>
-          <ArrowButton href="/contact" accent="blue">
-            Connect with Us
-          </ArrowButton>
+          <div className="flex flex-wrap gap-4">
+            <ArrowButton href="/contact" accent="blue">
+              Connect with Us
+            </ArrowButton>
+            <ArrowButton href="/contact#contact-form" accent="green">
+              Request Free Counts
+            </ArrowButton>
+          </div>
         </div>
       </div>
     </section>
