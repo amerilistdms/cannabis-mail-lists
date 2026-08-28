@@ -80,9 +80,6 @@ export default function ContactPage() {
               <ArrowButton href="#contact-form" variant="outline-white" accent="blue">
                 Request Free Counts
               </ArrowButton>
-              <ArrowButton href="#contact-form" variant="outline-white" accent="blue">
-                Book A Consultation
-              </ArrowButton>
             </div>
           </div>
         </section>
