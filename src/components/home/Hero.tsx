@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowButton } from "@/components/ArrowButton";
 
 function BookACall() {
   const radius = 90;
@@ -117,13 +118,18 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
-            <div data-hero className="flex max-w-[565px] items-center gap-4">
-              <span className="h-[75px] w-[3px] shrink-0 rounded-[30px] bg-green" aria-hidden />
-              <p className="max-w-[546px] text-base leading-6 text-frost">
-                Reach verified cannabis consumers, marijuana enthusiasts, CBD buyers, dispensary
-                shoppers, cannabis investors, medical marijuana patients, and cannabis interested
-                households across the United States.
-              </p>
+            <div data-hero className="flex max-w-[565px] flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <span className="h-[75px] w-[3px] shrink-0 rounded-[30px] bg-green" aria-hidden />
+                <p className="max-w-[546px] text-base leading-6 text-frost">
+                  Reach verified cannabis consumers, marijuana enthusiasts, CBD buyers, dispensary
+                  shoppers, cannabis investors, medical marijuana patients, and cannabis interested
+                  households across the United States.
+                </p>
+              </div>
+              <ArrowButton href="/contact#contact-form" variant="outline-white" accent="blue">
+                Request a Free Market Analysis
+              </ArrowButton>
             </div>
             <div data-hero className="flex w-full justify-center md:w-auto md:justify-end">
               <BookACall />
