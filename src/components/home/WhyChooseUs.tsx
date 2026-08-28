@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ArrowButton } from "@/components/ArrowButton";
 
 const cards = [
   {
@@ -127,17 +128,22 @@ export function WhyChooseUs() {
               Choose Us?
             </span>
           </h2>
-          <div data-reveal-child className="w-full max-w-[546px] space-y-4 text-base leading-6 text-foreground lg:shrink-0 lg:pt-1">
-            <p>
-              At Cannabis Email Lists, we help cannabis companies, CBD brands, dispensaries,
-              ancillary service providers, and cannabis focused marketers identify and connect with
-              qualified prospects through highly targeted audience data solutions.
-            </p>
-            <p>
-              Our database includes millions of consumers identified through a variety of
-              demographic, behavioral, purchase interest, lifestyle, and response based indicators
-              that help marketers target likely cannabis users and marijuana interested consumers.
-            </p>
+          <div data-reveal-child className="w-full max-w-[546px] space-y-6 text-base leading-6 text-foreground lg:shrink-0 lg:pt-1">
+            <div className="space-y-4">
+              <p>
+                At Cannabis Email Lists, we help cannabis companies, CBD brands, dispensaries,
+                ancillary service providers, and cannabis focused marketers identify and connect with
+                qualified prospects through highly targeted audience data solutions.
+              </p>
+              <p>
+                Our database includes millions of consumers identified through a variety of
+                demographic, behavioral, purchase interest, lifestyle, and response based indicators
+                that help marketers target likely cannabis users and marijuana interested consumers.
+              </p>
+            </div>
+            <ArrowButton href="/contact#contact-form" accent="blue">
+              Request Free Counts
+            </ArrowButton>
           </div>
         </div>
       </div>

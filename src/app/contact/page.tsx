@@ -74,11 +74,7 @@ export default function ContactPage() {
             </div>
 
             <div data-hero className="flex flex-col gap-4 sm:flex-row sm:flex-wrap md:gap-8">
-              <ArrowButton
-                href="mailto:info@amerilist.com?subject=Cannabis%20Email%20Lists%20-%20Call%20Request"
-                variant="outline-white"
-                accent="blue"
-              >
+              <ArrowButton href="tel:+18004572899" variant="outline-white" accent="blue">
                 Call Today
               </ArrowButton>
               <ArrowButton href="#contact-form" variant="outline-white" accent="blue">
