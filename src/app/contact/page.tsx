@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowButton } from "@/components/ArrowButton";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollEffects } from "@/components/ScrollEffects";
@@ -80,23 +81,39 @@ export default function ContactPage() {
               >
                 Call Today
               </ArrowButton>
-              <ArrowButton
-                href="mailto:info@amerilist.com?subject=Request%20Free%20Counts"
-                variant="outline-white"
-                accent="blue"
-              >
+              <ArrowButton href="#contact-form" variant="outline-white" accent="blue">
                 Request Free Counts
               </ArrowButton>
-              <ArrowButton
-                href="mailto:info@amerilist.com?subject=Book%20A%20Consultation"
-                variant="outline-white"
-                accent="blue"
-              >
+              <ArrowButton href="#contact-form" variant="outline-white" accent="blue">
                 Book A Consultation
               </ArrowButton>
             </div>
           </div>
         </section>
+
+        <section id="contact-form" data-reveal className="bg-frost py-16 md:py-20">
+          <div className="mx-auto w-full max-w-[1120px] px-5 md:px-10">
+            <div data-reveal-child className="mb-10 max-w-[640px]">
+              <h2 className="text-[32px] leading-none sm:text-[36px] md:text-[48px]">
+                <span className="block font-light leading-[1.2] text-glow md:leading-[65px]">
+                  Get In
+                </span>
+                <span className="font-serif-accent block leading-[1.2] tracking-[-0.02em] text-green md:leading-[69px]">
+                  Touch
+                </span>
+              </h2>
+              <p className="mt-4 text-base leading-6 text-foreground">
+                Share a few details about your campaign and we&apos;ll follow up with available
+                counts, pricing options, and recommendations.
+              </p>
+            </div>
+
+            <div data-reveal-child className="overflow-hidden rounded-2xl bg-white px-4 py-6 md:px-8 md:py-8">
+              <ContactForm />
+            </div>
+          </div>
+        </section>
+
         <div data-reveal>
           <Footer />
         </div>
