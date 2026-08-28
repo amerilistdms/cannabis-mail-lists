@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowButton } from "@/components/ArrowButton";
 
 const audiences = [
   {
@@ -65,6 +66,18 @@ export function Audiences() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div
+          data-reveal-child
+          className="mt-10 flex flex-wrap items-center justify-center gap-4 px-5 md:mt-14 md:px-10"
+        >
+          <ArrowButton href="/list-options" accent="blue">
+            Explore List Options
+          </ArrowButton>
+          <ArrowButton href="/contact#contact-form" accent="green">
+            Request Free Counts
+          </ArrowButton>
         </div>
       </div>
     </section>
