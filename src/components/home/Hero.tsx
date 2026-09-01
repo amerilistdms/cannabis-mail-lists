@@ -12,7 +12,7 @@ function BookACall() {
     <Link
       href="/contact"
       aria-label="Book a call"
-      className="relative mx-auto block size-[180px] shrink-0 md:mx-0 md:size-[202px]"
+      className="relative block size-[148px] shrink-0 sm:size-[168px] md:size-[202px]"
     >
       <svg
         viewBox="0 0 202 202"
@@ -91,8 +91,8 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative flex flex-col px-5 pb-10 pt-6 md:px-10 md:pb-10 md:pt-10">
-        <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-14 md:gap-[56px]">
+      <div className="relative flex flex-col px-5 pb-8 pt-6 md:px-10 md:pb-10 md:pt-10">
+        <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 md:gap-[56px]">
           <div data-hero className="max-w-[809px]">
             <h1 className="flex flex-col">
               <span className="flex flex-wrap items-start gap-x-3 gap-y-1 sm:gap-x-4">
@@ -117,8 +117,8 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
-            <div data-hero className="flex max-w-[565px] flex-col gap-6">
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between md:gap-12">
+            <div data-hero className="flex w-full max-w-[565px] flex-col items-start gap-5 md:gap-6">
               <div className="flex items-center gap-4">
                 <span className="h-[75px] w-[3px] shrink-0 rounded-[30px] bg-green" aria-hidden />
                 <p className="max-w-[546px] text-base leading-6 text-frost">
@@ -131,7 +131,7 @@ export function Hero() {
                 Request a Free Market Analysis
               </ArrowButton>
             </div>
-            <div data-hero className="flex w-full justify-center md:w-auto md:justify-end">
+            <div data-hero className="shrink-0 self-start md:self-end">
               <BookACall />
             </div>
           </div>
