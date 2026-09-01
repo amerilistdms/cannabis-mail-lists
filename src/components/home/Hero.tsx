@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useId } from "react";
 import { ArrowButton } from "@/components/ArrowButton";
 
-function BookACall() {
+function BookACall({ className = "" }: { className?: string }) {
+  const uid = useId().replace(/:/g, "");
+  const pathId = `bookCallPath-${uid}`;
   const radius = 90;
   const phrases = [0, 1, 2, 3] as const;
 
@@ -12,7 +15,7 @@ function BookACall() {
     <Link
       href="/contact"
       aria-label="Book a call"
-      className="relative block size-[148px] shrink-0 sm:size-[168px] md:size-[202px]"
+      className={`relative block size-[132px] shrink-0 sm:size-[156px] lg:size-[202px] ${className}`}
     >
       <svg
         viewBox="0 0 202 202"
@@ -21,7 +24,7 @@ function BookACall() {
       >
         <defs>
           <path
-            id="bookCallPath"
+            id={pathId}
             d={`M101,101 m-${radius},0 a${radius},${radius} 0 1,1 ${radius * 2},0 a${radius},${radius} 0 1,1 -${radius * 2},0`}
             fill="none"
           />
@@ -36,7 +39,7 @@ function BookACall() {
             letterSpacing="1.2"
             textAnchor="middle"
           >
-            <textPath href="#bookCallPath" startOffset={`${12.5 + i * 25}%`}>
+            <textPath href={`#${pathId}`} startOffset={`${12.5 + i * 25}%`}>
               BOOK A CALL
             </textPath>
           </text>
@@ -50,7 +53,7 @@ function BookACall() {
             fontFamily="var(--font-jakarta), sans-serif"
             textAnchor="middle"
           >
-            <textPath href="#bookCallPath" startOffset={`${i * 25}%`}>
+            <textPath href={`#${pathId}`} startOffset={`${i * 25}%`}>
               •
             </textPath>
           </text>
@@ -92,7 +95,7 @@ export function Hero() {
       </div>
 
       <div className="relative flex flex-col px-5 pb-8 pt-6 md:px-10 md:pb-10 md:pt-10">
-        <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-10 md:gap-[56px]">
+        <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-8 lg:gap-[56px]">
           <div data-hero className="max-w-[809px]">
             <h1 className="flex flex-col">
               <span className="flex flex-wrap items-start gap-x-3 gap-y-1 sm:gap-x-4">
@@ -117,8 +120,8 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between md:gap-12">
-            <div data-hero className="flex w-full max-w-[565px] flex-col items-start gap-5 md:gap-6">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <div data-hero className="flex w-full max-w-[565px] flex-col items-start gap-5">
               <div className="flex items-center gap-4">
                 <span className="h-[75px] w-[3px] shrink-0 rounded-[30px] bg-green" aria-hidden />
                 <p className="max-w-[546px] text-base leading-6 text-frost">
@@ -127,11 +130,16 @@ export function Hero() {
                   households across the United States.
                 </p>
               </div>
-              <ArrowButton href="/contact#contact-form" variant="outline-white" accent="blue">
-                Request a Free Market Analysis
-              </ArrowButton>
+
+              <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-6">
+                <ArrowButton href="/contact#contact-form" variant="outline-white" accent="blue">
+                  Request a Free Market Analysis
+                </ArrowButton>
+                <BookACall className="lg:hidden" />
+              </div>
             </div>
-            <div data-hero className="shrink-0 self-start md:self-end">
+
+            <div data-hero className="hidden shrink-0 lg:block">
               <BookACall />
             </div>
           </div>
