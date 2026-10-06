@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { LegalShell } from "@/components/LegalShell";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Cannabis Email Lists",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Privacy Policy",
+  description:
+    "Privacy Policy for Cannabis Email Lists, a division of AmeriList, explaining how we handle website and marketing information.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

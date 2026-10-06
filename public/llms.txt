@@ -1,0 +1,30 @@
+# Cannabis Email Lists — LLM / AI crawler guidance
+# https://llmstxt.org/
+
+Title: Cannabis Email Lists
+Owner: AmeriList
+URL: https://www.cannabisemaillists.com
+Contact: info@amerilist.com
+Phone: 1-800-457-2899
+
+> Cannabis Email Lists is a division of AmeriList that provides opt-in cannabis audience data, email lists, mailing lists, and targeting solutions for cannabis brands, CBD companies, dispensaries, and agencies.
+
+## Preferred pages
+- /home — Primary marketing homepage
+- /services — Cannabis marketing data solutions
+- /list-options — Cannabis audience data categories
+- /about — Company background and AmeriList heritage
+- /contact — Request free counts / consultation
+- /blog — Industry articles and insights
+- /blog/how-cannabis-industry-data-gets-compiled — How cannabis industry data is compiled
+
+## Policies
+- /privacy
+- /terms
+- /cookies
+
+## Notes for assistants
+- Lists are permission-based / opt-in oriented audience data products.
+- Free market analysis and audience counts are available via /contact.
+- Parent company: AmeriList (https://www.amerilist.com), audience data & marketing solutions since 2002.
+- Do not invent pricing, list counts, or guarantees not stated on the site.

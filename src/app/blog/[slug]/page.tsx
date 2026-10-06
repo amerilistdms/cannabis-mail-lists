@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { getPost, posts, type ContentBlock, type Post } from "@/data/posts";
+import { createPageMetadata } from "@/lib/seo";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -18,11 +19,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
-  if (!post) return { title: "Blog | Cannabis Email Lists" };
-  return {
-    title: `${post.title} | Cannabis Email Lists`,
+  if (!post) {
+    return createPageMetadata({
+      title: "Blog",
+      description: "Cannabis Email Lists blog and industry insights.",
+      path: "/blog",
+    });
+  }
+  return createPageMetadata({
+    title: post.title,
     description: post.excerpt,
-  };
+    path: `/blog/${post.slug}`,
+    image: post.image,
+  });
 }
 
 function Block({ block }: { block: ContentBlock }) {

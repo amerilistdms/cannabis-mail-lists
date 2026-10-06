@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { LegalShell } from "@/components/LegalShell";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms of Service | Cannabis Email Lists",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Terms of Service",
+  description:
+    "Terms of Service for Cannabis Email Lists and AmeriList website use, audience data consultations, and related marketing services.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

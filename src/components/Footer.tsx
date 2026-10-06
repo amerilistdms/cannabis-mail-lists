@@ -1,28 +1,43 @@
 import Link from "next/link";
 import { ArrowButton } from "./ArrowButton";
+import { slugify } from "@/lib/site";
 
 const listOptions = [
-  "Cannabis Users",
-  "CBD Users",
-  "Medical MJ Patients",
-  "Cannabis Investors",
-  "Dispensary Shoppers",
-  "Industry Professionals",
+  { label: "Cannabis Users", href: `/list-options#${slugify("Cannabis Users List")}` },
+  { label: "CBD Users", href: `/list-options#${slugify("CBD Users List")}` },
+  {
+    label: "Medical MJ Patients",
+    href: `/list-options#${slugify("Medical Marijuana Patients List")}`,
+  },
+  { label: "Cannabis Investors", href: `/list-options#${slugify("Cannabis Investors List")}` },
+  {
+    label: "Dispensary Shoppers",
+    href: `/list-options#${slugify("Dispensary Customer Audiences")}`,
+  },
+  {
+    label: "Industry Professionals",
+    href: `/list-options#${slugify("Cannabis Industry Professionals")}`,
+  },
 ];
 
 const services = [
-  "Cannabis Consumer",
-  "Cannabis Email Lists",
-  "Cannabis Mailing Lists",
-  "Audience Profiling",
-  "Audience Modeling",
-  "Data Enhancement",
-  "Custom Audiences",
+  { label: "Cannabis Consumer", href: `/services#${slugify("Cannabis Consumer Lists")}` },
+  { label: "Cannabis Email Lists", href: `/services#${slugify("Cannabis Email Lists")}` },
+  { label: "Cannabis Mailing Lists", href: `/services#${slugify("Cannabis Mailing Lists")}` },
+  { label: "Audience Profiling", href: `/services#${slugify("Audience Profiling")}` },
+  { label: "Audience Modeling", href: `/services#${slugify("Audience Modeling")}` },
+  { label: "Data Enhancement", href: `/services#${slugify("Data Enhancement")}` },
+  {
+    label: "Custom Audiences",
+    href: `/services#${slugify("Custom Audience Development")}`,
+  },
 ];
 
 const company = [
   { href: "/home", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/list-options", label: "List Options" },
   { href: "/contact", label: "Contact" },
   { href: "/blog", label: "Blog" },
 ];
@@ -38,9 +53,9 @@ export function Footer() {
                 <p className="mb-2 text-sm font-bold tracking-[0.14px]">List Options</p>
                 <ul className="space-y-2 text-sm tracking-[0.14px]">
                   {listOptions.map((item) => (
-                    <li key={item}>
-                      <Link href="/list-options" className="hover:opacity-80">
-                        {item}
+                    <li key={item.label}>
+                      <Link href={item.href} className="hover:opacity-80">
+                        {item.label}
                       </Link>
                     </li>
                   ))}
@@ -50,9 +65,9 @@ export function Footer() {
                 <p className="mb-2 text-sm font-bold tracking-[0.14px]">Services</p>
                 <ul className="space-y-2 text-sm tracking-[0.14px]">
                   {services.map((item) => (
-                    <li key={item}>
-                      <Link href="/services" className="hover:opacity-80">
-                        {item}
+                    <li key={item.label}>
+                      <Link href={item.href} className="hover:opacity-80">
+                        {item.label}
                       </Link>
                     </li>
                   ))}
@@ -79,18 +94,10 @@ export function Footer() {
                 mail, digital advertising and customer acquisition.
               </p>
               <div className="flex flex-wrap gap-5">
-                <ArrowButton
-                  href="mailto:info@amerilist.com?subject=Request%20Free%20Counts"
-                  variant="outline-white"
-                  accent="green"
-                >
+                <ArrowButton href="/contact#contact-form" variant="outline-white" accent="green">
                   Request Free Counts
                 </ArrowButton>
-                <ArrowButton
-                  href="mailto:info@amerilist.com?subject=Book%20a%20Call"
-                  variant="outline-white"
-                  accent="green"
-                >
+                <ArrowButton href="/contact" variant="outline-white" accent="green">
                   Book a Call
                 </ArrowButton>
               </div>

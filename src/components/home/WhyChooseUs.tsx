@@ -74,6 +74,7 @@ function Card({
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         sizes="330px"
+        quality={70}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#1e1e1e]/85 via-[#1e1e1e]/20 to-transparent to-[52%]" />
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/35 to-transparent" />

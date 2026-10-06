@@ -5,10 +5,14 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollEffects } from "@/components/ScrollEffects";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact | Cannabis Email Lists",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Schedule a free cannabis marketing consultation. Request audience counts, pricing options, and campaign recommendations from AmeriList.",
+  path: "/contact",
+});
 
 const topics = [
   "Your target audience",

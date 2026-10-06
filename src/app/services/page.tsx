@@ -4,10 +4,15 @@ import { ArrowButton } from "@/components/ArrowButton";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollEffects } from "@/components/ScrollEffects";
+import { createPageMetadata } from "@/lib/seo";
+import { slugify } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Services | Cannabis Email Lists",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Services",
+  description:
+    "Cannabis marketing data solutions including consumer lists, email lists, mailing lists, audience profiling, modeling, data enhancement, and custom audiences.",
+  path: "/services",
+});
 
 const services = [
   {
@@ -79,6 +84,7 @@ export default function ServicesPage() {
               alt=""
               fill
               className="object-cover object-bottom opacity-80"
+              sizes="100vw"
             />
           </div>
         </section>
@@ -88,15 +94,16 @@ export default function ServicesPage() {
             {services.map((item, index) => (
               <article
                 key={item.title}
+                id={slugify(item.title)}
                 data-reveal-child
-                className={`flex flex-col gap-6 pb-[30px] md:flex-row md:items-center md:gap-[109px] ${
+                className={`scroll-mt-28 flex flex-col gap-6 pb-[30px] md:flex-row md:items-center md:gap-[109px] ${
                   index < services.length - 1 ? "border-b border-dashed border-foreground/40" : ""
                 }`}
               >
                 <div className="grid size-20 shrink-0 place-items-center bg-green">
                   <Image
                     src={item.icon}
-                    alt=""
+                    alt={`${item.title} icon`}
                     width={40}
                     height={40}
                     className="h-10 w-10 object-contain"

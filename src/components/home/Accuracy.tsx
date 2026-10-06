@@ -15,6 +15,7 @@ export function Accuracy() {
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 600px"
+            quality={75}
           />
         </div>
 

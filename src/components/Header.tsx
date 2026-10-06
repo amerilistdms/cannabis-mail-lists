@@ -57,7 +57,7 @@ export function Header({ overDark = true }: HeaderProps) {
         <Link href="/home" className="relative z-50 shrink-0">
           <Image
             src={solid ? "/images/logo nav colored.svg" : "/images/logo nav white.svg"}
-            alt="AmeriList"
+            alt="AmeriList Cannabis Email Lists"
             width={141}
             height={29}
             priority

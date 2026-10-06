@@ -45,7 +45,7 @@ export function CtaSection() {
             <div className="relative h-[220px] w-full overflow-hidden rounded-xl md:h-[295px]">
               <Image
                 src="/images/figma/cta-photo.png"
-                alt="Cannabis lifestyle"
+                alt="Cannabis consumer lifestyle portrait"
                 fill
                 className="object-cover"
                 sizes="545px"

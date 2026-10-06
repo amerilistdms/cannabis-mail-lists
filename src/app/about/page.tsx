@@ -3,10 +3,14 @@ import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollEffects } from "@/components/ScrollEffects";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About | Cannabis Email Lists",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "About",
+  description:
+    "Learn how Cannabis Email Lists, a division of AmeriList, helps marketers reach qualified cannabis audiences with reliable opt-in data since 2002.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
@@ -36,7 +40,7 @@ export default function AboutPage() {
                   alt="Cannabis consumer lifestyle"
                   fill
                   className="object-cover"
-                  sizes="523px"
+                  sizes="(max-width: 768px) 100vw, 523px"
                 />
               </div>
               <div
@@ -48,7 +52,7 @@ export default function AboutPage() {
                   alt="Cannabis brand collaboration"
                   fill
                   className="object-cover"
-                  sizes="523px"
+                  sizes="(max-width: 768px) 100vw, 523px"
                 />
               </div>
             </div>

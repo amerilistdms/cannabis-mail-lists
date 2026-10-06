@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { LegalShell } from "@/components/LegalShell";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cookie Policy | Cannabis Email Lists",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Cookie Policy",
+  description:
+    "Cookie Policy for Cannabis Email Lists explaining how cookies and similar technologies are used on our website.",
+  path: "/cookies",
+});
 
 export default function CookiesPage() {
   return (

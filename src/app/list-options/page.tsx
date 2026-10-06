@@ -4,10 +4,15 @@ import { ArrowButton } from "@/components/ArrowButton";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollEffects } from "@/components/ScrollEffects";
+import { createPageMetadata } from "@/lib/seo";
+import { slugify } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "List Options | Cannabis Email Lists",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "List Options",
+  description:
+    "Explore cannabis audience data categories including cannabis users, CBD buyers, medical marijuana patients, investors, dispensary shoppers, and more.",
+  path: "/list-options",
+});
 
 const lists = [
   {
@@ -84,6 +89,7 @@ export default function ListOptionsPage() {
               alt=""
               fill
               className="object-cover object-bottom"
+              sizes="100vw"
             />
           </div>
         </section>
@@ -93,20 +99,21 @@ export default function ListOptionsPage() {
             {lists.map((item, index) => (
               <article
                 key={item.title}
+                id={slugify(item.title)}
                 data-reveal-child
-                className={`flex flex-col gap-6 pb-[30px] md:flex-row md:items-center md:gap-[109px] ${
+                className={`scroll-mt-28 flex flex-col gap-6 pb-[30px] md:flex-row md:items-center md:gap-[109px] ${
                   index < lists.length - 1 ? "border-b border-dashed border-foreground/40" : ""
                 }`}
               >
-              <div className="grid size-20 shrink-0 place-items-center bg-green">
-                <Image
-                  src={item.icon}
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 object-contain"
-                />
-              </div>
+                <div className="grid size-20 shrink-0 place-items-center bg-green">
+                  <Image
+                    src={item.icon}
+                    alt={`${item.title} icon`}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
+                </div>
                 <h2 className="w-full text-lg font-bold md:w-[260px] md:shrink-0">{item.title}</h2>
                 <p className="flex-1 text-base leading-6">{item.copy}</p>
               </article>

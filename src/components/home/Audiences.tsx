@@ -1,35 +1,42 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowButton } from "@/components/ArrowButton";
 
 const audiences = [
   {
     title: "Cannabis Users",
     icon: "/images/figma/aud-1.png",
+    href: "/list-options#cannabis-users-list",
     copy: "Consumers identified as marijuana users through various lifestyle, survey, and behavioral indicators.",
   },
   {
     title: "CBD Buyers",
     icon: "/images/figma/aud-2.png",
+    href: "/list-options#cbd-users-list",
     copy: "Reach consumers who purchase CBD products and wellness related alternatives.",
   },
   {
     title: "Medical Marijuana Patients",
     icon: "/images/figma/aud-3.png",
+    href: "/list-options#medical-marijuana-patients-list",
     copy: "Target individuals associated with medical marijuana interest categories and healthcare related cannabis usage.",
   },
   {
     title: "Cannabis Investors",
     icon: "/images/figma/aud-4.png",
+    href: "/list-options#cannabis-investors-list",
     copy: "Identify consumers interested in cannabis related investment opportunities.",
   },
   {
     title: "Cannabis Enthusiasts",
     icon: "/images/figma/aud-5.png",
+    href: "/list-options#cannabis-lifestyle-enthusiasts",
     copy: "Reach highly engaged consumers with demonstrated interest in cannabis culture, products, and related content.",
   },
   {
     title: "Dispensary Shoppers",
     icon: "/images/figma/aud-6.png",
+    href: "/list-options#dispensary-customer-audiences",
     copy: "Audience segments built around retail cannabis purchasing behavior and dispensary engagement indicators.",
   },
 ];
@@ -58,10 +65,20 @@ export function Audiences() {
               className="flex flex-col gap-10 border-[0.2px] border-foreground p-8 md:p-10"
             >
               <div className="relative size-8 overflow-hidden">
-                <Image src={item.icon} alt="" fill className="object-cover" sizes="32px" />
+                <Image
+                  src={item.icon}
+                  alt={`${item.title} audience icon`}
+                  fill
+                  className="object-cover"
+                  sizes="32px"
+                />
               </div>
               <div>
-                <h3 className="mb-2 text-lg font-bold">{item.title}</h3>
+                <h3 className="mb-2 text-lg font-bold">
+                  <Link href={item.href} className="hover:text-green">
+                    {item.title}
+                  </Link>
+                </h3>
                 <p className="text-base leading-6">{item.copy}</p>
               </div>
             </article>
